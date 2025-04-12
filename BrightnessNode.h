@@ -47,7 +47,7 @@ public:
 
     bool resizable() const override { return true; }
     void setBrightnessLevel(int value);
-
+    void setConstrastLevel(int value);
 
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
@@ -57,4 +57,5 @@ private:
 
     std::shared_ptr<NodeData> _nodeData;
     int _brightnessValue = 0;
+    int _contrastvalue=0;
 };

@@ -112,6 +112,17 @@ void BrightnessNode::setInData(std::shared_ptr<NodeData> nodeData, PortIndex con
     Q_EMIT dataUpdated(0);
 
 }
+
+    void BrightnessNode::setConstrastLevel(int value) {
+    _contrastvalue = value;
+    if (_label)
+
+    {
+        _label->setText(QString("Brightness: %1").arg(value));
+    }
+    setInData(_nodeData, 0);
+}
+
 void BrightnessNode::setBrightnessLevel(int value) {
     _brightnessValue = value;
     if (_label)

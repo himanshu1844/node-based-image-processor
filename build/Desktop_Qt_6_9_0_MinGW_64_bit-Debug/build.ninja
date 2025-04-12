@@ -97,6 +97,14 @@ build CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj: CXX_COMPILER__ImageP
   OBJECT_DIR = CMakeFiles\ImageProcessor.dir
   OBJECT_FILE_DIR = CMakeFiles\ImageProcessor.dir
 
+build CMakeFiles/ImageProcessor.dir/Splitter.cpp.obj: CXX_COMPILER__ImageProcessor_unscanned_Debug C$:/Users/Himanshu$ Pancholi/ImageProcessor/Splitter.cpp || cmake_object_order_depends_target_ImageProcessor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DNODE_EDITOR_SHARED -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\ImageProcessor.dir\Splitter.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/include" -I"C:/Users/Himanshu Pancholi/ImageProcessor/opencv" -I"C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include" -isystem C:/Qt/6.9.0/mingw_64/include/QtCore -isystem C:/Qt/6.9.0/mingw_64/include -isystem C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.0/mingw_64/include/QtGui -isystem C:/Qt/6.9.0/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\ImageProcessor.dir
+  OBJECT_FILE_DIR = CMakeFiles\ImageProcessor.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ImageProcessor
@@ -105,7 +113,7 @@ build CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj: CXX_COMPILER__ImageP
 #############################################
 # Link the executable ImageProcessor.exe
 
-build ImageProcessor.exe: CXX_EXECUTABLE_LINKER__ImageProcessor_Debug CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj CMakeFiles/ImageProcessor.dir/main.cpp.obj CMakeFiles/ImageProcessor.dir/mainwindow.cpp.obj CMakeFiles/ImageProcessor.dir/ImageShowModel.cpp.obj CMakeFiles/ImageProcessor.dir/ImageLoaderModel.cpp.obj CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj | lib/libQtNodes.dll.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || ImageProcessor_autogen ImageProcessor_autogen_timestamp_deps bin/libQtNodes.dll
+build ImageProcessor.exe: CXX_EXECUTABLE_LINKER__ImageProcessor_Debug CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj CMakeFiles/ImageProcessor.dir/main.cpp.obj CMakeFiles/ImageProcessor.dir/mainwindow.cpp.obj CMakeFiles/ImageProcessor.dir/ImageShowModel.cpp.obj CMakeFiles/ImageProcessor.dir/ImageLoaderModel.cpp.obj CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj CMakeFiles/ImageProcessor.dir/Splitter.cpp.obj | lib/libQtNodes.dll.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a || ImageProcessor_autogen ImageProcessor_autogen_timestamp_deps bin/libQtNodes.dll
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = lib/libQtNodes.dll.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.9.0/mingw_64/lib/libQt6OpenGL.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.9.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.9.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

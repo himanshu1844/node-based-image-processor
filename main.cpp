@@ -18,7 +18,7 @@
 #include "ImageLoaderModel.h"
 #include "ImageShowModel.h"
 #include "BrightnessNode.h"
-
+#include "Splitter.h"
 
 using QtNodes::ConnectionStyle;
 using QtNodes::DataFlowGraphicsScene;
@@ -34,6 +34,7 @@ static std::shared_ptr<NodeDelegateModelRegistry> registerDataModels()
     ret->registerModel<ImageShowModel>();
     ret->registerModel<ImageLoaderModel>();
     ret->registerModel<BrightnessNode>();
+    ret->registerModel<Splitter>();
     return ret;
 }
 
@@ -92,8 +93,9 @@ int main(int argc, char *argv[])
     rightLayout->addWidget(new QPushButton("Settings"));
     rightLayout->addStretch();
     rightSidebar->setLayout(rightLayout);
-    //slider
+    //brightness slider
     QLabel *sliderLabel = new QLabel("Brightness:");
+
     QSlider *brightnessSlider = new QSlider(Qt::Horizontal);
     brightnessSlider->setRange(-100, 100);
     brightnessSlider->setValue(0);
@@ -101,6 +103,15 @@ int main(int argc, char *argv[])
     brightnessSlider->setVisible(false);
     rightLayout->addWidget(sliderLabel);
     rightLayout->addWidget(brightnessSlider);
+    //contrast slider
+    QLabel *sliderLabel_c = new QLabel("Contrast:");
+    QSlider *ConstrastSlider = new QSlider(Qt::Horizontal);
+    ConstrastSlider->setRange(0, 3);
+   ConstrastSlider->setValue(0);
+    sliderLabel_c->setVisible(false);
+    ConstrastSlider->setVisible(false);
+    rightLayout->addWidget(sliderLabel_c);
+    rightLayout->addWidget(ConstrastSlider);
 
     // === Layout for Central Area ===
     QWidget *centralWidget = new QWidget();
@@ -134,27 +145,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(exitAction, &QAction::triggered, &app, &QApplication::quit);
 
-    // QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked, [&](QtNodes::NodeId const nodeId) {
-    //     auto &graphModel = scene.graphModel();
-
-    //     // Use the delegateModel<T>() template metho
-    //     auto brightnessNode = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<BrightnessNode>(nodeId);
-
-    //     if (brightnessNode) {
-    //         sliderLabel->setVisible(true);
-    //         brightnessSlider->setVisible(true);
-    //         brightnessSlider->setValue(static_cast<int>(brightnessNode->getBrightnessLevel()));
-    //         QObject::disconnect(brightnessSlider, nullptr, nullptr, nullptr);
-    //         QObject::connect(brightnessSlider, &QSlider::valueChanged, [=](int value)) {
-    //         brightnessNode->setBrightnessLevel(static_cast<float>(value));
-    //         }
-
-
-    //     } else{
-    //         sliderLabel->setVisible(false);
-    //         brightnessSlider->setVisible(false);
-    //     }
-    // };
+   //brightness/contrast Node on click
     QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
                      [&](QtNodes::NodeId const &nodeId) {
                          auto &graphModel = scene.graphModel();
@@ -165,19 +156,29 @@ int main(int argc, char *argv[])
                          if (brightnessNode) {
                              sliderLabel->setVisible(true);
                              brightnessSlider->setVisible(true);
+                             sliderLabel_c->setVisible(true);
+                             ConstrastSlider->setVisible(true);
+
 
                              // Optional: uncomment if getBrightnessLevel() exists
                              // brightnessSlider->setValue(static_cast<int>(brightnessNode->getBrightnessLevel()));
 
                              QObject::disconnect(brightnessSlider, nullptr, nullptr, nullptr);
+                             QObject::disconnect(ConstrastSlider, nullptr, nullptr, nullptr);
 
                              QObject::connect(brightnessSlider, &QSlider::valueChanged,
                                               [=](int value) {
                                                   brightnessNode->setBrightnessLevel(static_cast<float>(value));
                                               });
+                             QObject::connect(ConstrastSlider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  brightnessNode->setConstrastLevel(static_cast<float>(value));
+                                              });
                          } else {
                              sliderLabel->setVisible(false);
                              brightnessSlider->setVisible(false);
+                             sliderLabel_c->setVisible(false);
+                             ConstrastSlider->setVisible(false);
                          }
                      });
 

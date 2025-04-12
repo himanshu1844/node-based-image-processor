@@ -181,6 +181,7 @@ ImageProcessor_autogen/timestamp: \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qtransform.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QCheckBox \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDockWidget \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLabel \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -188,9 +189,11 @@ ImageProcessor_autogen/timestamp: \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QTextEdit \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QVBoxLayout \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget \
+	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qboxlayout.h \
+	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qcheckbox.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qdockwidget.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qgridlayout.h \
@@ -660,6 +663,8 @@ ImageProcessor_autogen/timestamp: \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/ImageShowModel.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/ImageShowModel.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/PixmapData.h \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Splitter.cpp \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Splitter.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
