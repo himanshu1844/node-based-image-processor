@@ -43,6 +43,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Threshold.cpp
         edge.h
         edge.cpp
+        Blend.h
+        Blend.cpp
     )
 else()
     if(ANDROID)

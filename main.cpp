@@ -24,6 +24,7 @@
 #include "BlurNode.h"
 #include "Threshold.h"
 #include "edge.h"
+#include "Blend.h"
 using QtNodes::ConnectionStyle;
 using QtNodes::DataFlowGraphicsScene;
 using QtNodes::DataFlowGraphModel;
@@ -40,8 +41,9 @@ static std::shared_ptr<NodeDelegateModelRegistry> registerDataModels()
     ret->registerModel<BrightnessNode>();
     ret->registerModel<Splitter>();
     ret->registerModel<BlurNode>();
-    ret->registerModel<ThresholdNode>();\
+    ret->registerModel<ThresholdNode>();
     ret->registerModel<Edge>();
+    ret->registerModel<Blend>();
     return ret;
 }
 
@@ -237,6 +239,70 @@ int main(int argc, char *argv[])
     thresholdModeGroup_ed ->addButton(Sobel, 0);
     thresholdModeGroup_ed->addButton(Canny, 1);
 
+
+    //Blend Mode
+    QLabel *Blendmethod = new QLabel("Blend Mode:");
+    QCheckBox *Normal= new QCheckBox("Normal");
+    QCheckBox *Multiply = new QCheckBox("Multiply");
+    QCheckBox *Screen= new QCheckBox("Screen");
+    QCheckBox *Overlay=new QCheckBox("Overlay");
+    QCheckBox *Difference=new QCheckBox("Difference");
+    QLabel *opacityslider_label=new QLabel("opacity");
+    QSlider *opacityslider=new QSlider(Qt::Horizontal);
+    QLabel *mixslider_label=new QLabel("Mix");
+    QSlider *mixslider=new QSlider(Qt::Horizontal);
+    QButtonGroup *blendmethod_gr = new QButtonGroup();
+   blendmethod_gr ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    blendmethod_gr->addButton(Normal, 0);
+    blendmethod_gr->addButton(Multiply, 1);
+    blendmethod_gr->addButton(Screen,2);
+    blendmethod_gr->addButton(Overlay, 3);
+    blendmethod_gr->addButton(Difference, 4);
+
+
+
+    opacityslider->setRange(0,100);
+    opacityslider->setValue(0);
+    mixslider->setRange(0,100);
+    mixslider->setValue(0);
+    rightLayout->addWidget(Blendmethod);
+    rightLayout->addWidget(Normal);
+    rightLayout->addWidget(Multiply);
+    rightLayout->addWidget(Screen);
+    rightLayout->addWidget(Overlay);
+    rightLayout->addWidget(Difference);
+    rightLayout->addWidget(opacityslider_label);
+    rightLayout->addWidget(opacityslider);
+    rightLayout->addWidget(mixslider_label);
+    rightLayout->addWidget(mixslider);
+
+
+    Blendmethod->setVisible(false);
+    Normal->setVisible(false);
+    Multiply->setVisible(false);
+    Screen->setVisible(false);
+    Overlay->setVisible(false);
+    Difference->setVisible(false);
+    opacityslider_label->setVisible(false);
+    opacityslider->setVisible(false);
+    mixslider_label->setVisible(false);
+    mixslider->setVisible(false);
+
+
+
+
+
+
+
+    QButtonGroup *blendmethodgroup = new QButtonGroup();
+    blendmethodgroup ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    blendmethodgroup ->addButton(Normal, 0);
+    blendmethodgroup ->addButton(Multiply, 1);
+    blendmethodgroup->addButton(Screen, 2);
+    blendmethodgroup->addButton(Overlay, 3);
+    blendmethodgroup->addButton(Difference, 4);
 
 
 
@@ -483,6 +549,77 @@ int main(int argc, char *argv[])
                          }
                      });
 
+    //blend Mode on click
+
+    QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
+                     [&](QtNodes::NodeId const &nodeId) {
+                         auto &graphModel = scene.graphModel();
+
+                         auto blend = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<Blend>(nodeId);
+
+                         if (blend) {
+                             Blendmethod->setVisible(true);
+                             Normal->setVisible(true);
+                             Multiply->setVisible(true);
+                             Screen->setVisible(true);
+                             Overlay->setVisible(true);
+                             Difference->setVisible(true);
+                             opacityslider_label->setVisible(true);
+                             opacityslider->setVisible(true);
+                             mixslider_label->setVisible(true);
+                             mixslider->setVisible(true);
+
+
+
+
+
+                             QObject::disconnect(opacityslider, nullptr, nullptr, nullptr);
+                             QObject::disconnect(mixslider, nullptr, nullptr, nullptr);
+
+                             QObject::connect(opacityslider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  blend->setopacityLevel(value);
+                                              });
+                             QObject::connect(ConstrastSlider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  blend->setmixLevel(value);
+                                              });
+                             QObject::disconnect( blendmethodgroup, nullptr, nullptr, nullptr);
+                             QObject::connect( blendmethodgroup, &QButtonGroup::idClicked, [=](int id) {
+                                 switch (id) {
+                                 case 0:
+                                     blend->setblendMode("Normal");
+                                     break;
+                                 case 1:
+                                     blend->setblendMode("Multiply");
+                                     break;
+                                 case 2:
+                                     blend->setblendMode("Screen");
+                                     break;
+                                 case 3:
+                                     blend->setblendMode("Overlay");
+                                     break;
+
+                                 case 4:
+                                     blend->setblendMode("Difference");
+                                     break;
+
+                                 }
+                             });
+                         } else {
+                             Blendmethod->setVisible(false);
+                             Normal->setVisible(false);
+                             Multiply->setVisible(false);
+                             Screen->setVisible(false);
+                             Overlay->setVisible(false);
+                             Difference->setVisible(false);
+                             opacityslider_label->setVisible(false);
+                             opacityslider->setVisible(false);
+                             mixslider_label->setVisible(false);
+                             mixslider->setVisible(false);
+
+                         }
+                     });
 
 
 

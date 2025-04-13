@@ -339,6 +339,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/Himanshu Pancholi/ImageProcessor/Blend.h",
+			"MU",
+			"EWIEGA46WW/moc_Blend.cpp",
+			null
+		],
+		[
 			"C:/Users/Himanshu Pancholi/ImageProcessor/BlurNode.h",
 			"MU",
 			"EWIEGA46WW/moc_BlurNode.cpp",
@@ -469,6 +475,7 @@
 	"SETTINGS_FILE" : "C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/ImageProcessor_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Blend.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/BlurNode.cpp", "MU", null ],
 		[
 			"C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.cpp",

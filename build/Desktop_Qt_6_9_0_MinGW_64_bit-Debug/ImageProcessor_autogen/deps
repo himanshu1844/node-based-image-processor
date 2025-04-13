@@ -671,6 +671,7 @@ ImageProcessor_autogen/timestamp: \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/base.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/bufferpool.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/check.hpp \
+	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/core.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cv_cpu_dispatch.h \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cvdef.h \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cvstd.hpp \
@@ -701,6 +702,8 @@ ImageProcessor_autogen/timestamp: \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVConfig.cmake \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules-release.cmake \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules.cmake \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Blend.cpp \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Blend.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/BlurNode.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/BlurNode.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/BrightnessNode.cpp \
