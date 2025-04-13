@@ -17,6 +17,20 @@
 #include <QPushButton>
 #include <QComboBox>
 #include <QButtonGroup>
+#include <QGroupBox>
+#include <QGridLayout>
+
+
+#include <QGridLayout>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QTextStream>
+#include <QVector>
 #include "ImageLoaderModel.h"
 #include "ImageShowModel.h"
 #include "BrightnessNode.h"
@@ -25,6 +39,9 @@
 #include "Threshold.h"
 #include "edge.h"
 #include "Blend.h"
+#include "Noise.h"
+#include "Filter.h"
+
 using QtNodes::ConnectionStyle;
 using QtNodes::DataFlowGraphicsScene;
 using QtNodes::DataFlowGraphModel;
@@ -44,6 +61,8 @@ static std::shared_ptr<NodeDelegateModelRegistry> registerDataModels()
     ret->registerModel<ThresholdNode>();
     ret->registerModel<Edge>();
     ret->registerModel<Blend>();
+    ret->registerModel<Noise>();
+    ret->registerModel<FilterNode>();
     return ret;
 }
 
@@ -92,8 +111,8 @@ int main(int argc, char *argv[])
 
     // === Right Sidebar ===
     QWidget *rightSidebar = new QWidget();
-    rightSidebar->setMinimumWidth(100);
-    rightSidebar->setMaximumWidth(300);
+    rightSidebar->setMinimumWidth(300);
+    rightSidebar->setMaximumWidth(500);
 
     // rightSidebar->setStyleSheet("background-color: black;");
     QVBoxLayout *rightLayout = new QVBoxLayout();
@@ -252,7 +271,7 @@ int main(int argc, char *argv[])
     QLabel *mixslider_label=new QLabel("Mix");
     QSlider *mixslider=new QSlider(Qt::Horizontal);
     QButtonGroup *blendmethod_gr = new QButtonGroup();
-   blendmethod_gr ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+    blendmethod_gr ->setExclusive(true);  // ensures only one checkbox can be selected at a time
 
     blendmethod_gr->addButton(Normal, 0);
     blendmethod_gr->addButton(Multiply, 1);
@@ -303,6 +322,375 @@ int main(int argc, char *argv[])
     blendmethodgroup->addButton(Screen, 2);
     blendmethodgroup->addButton(Overlay, 3);
     blendmethodgroup->addButton(Difference, 4);
+
+
+    //Noise Node
+    QLabel *noisepattern=new QLabel("Noise Pattern");
+    QCheckBox *Perlin= new QCheckBox("Perlin");
+    QCheckBox *Simplex = new QCheckBox("Simplex");
+    QCheckBox *Worley= new QCheckBox("Worley");
+    QButtonGroup *noisepattern_grp = new QButtonGroup();
+    noisepattern_grp ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    noisepattern_grp ->addButton(Perlin, 0);
+    noisepattern_grp->addButton(Simplex, 1);
+    noisepattern_grp->addButton(Worley, 2);
+
+    QLabel *use_noise=new QLabel("Use Noise as:");
+    QCheckBox *Displacement= new QCheckBox("Displacement Map");
+    QCheckBox *Direct = new QCheckBox("Direct Color Output");
+
+    QButtonGroup *noise_use = new QButtonGroup();
+    noise_use ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    noise_use ->addButton(Displacement, 0);
+    noise_use->addButton(Direct, 1);
+
+
+
+    QLabel *scale_label=new QLabel("Scale");
+    QSlider *scaleslider=new QSlider(Qt::Horizontal);
+
+    QLabel *octave_label=new QLabel("Octave");
+    QSlider *octaveslider=new QSlider(Qt::Horizontal);
+
+    QLabel *persistence_label=new QLabel("Persistence");
+    QSlider *persitenceslider=new QSlider(Qt::Horizontal);
+
+    scaleslider->setRange(1,500);
+    scaleslider->setValue(100);
+    octaveslider->setRange(1,8);
+    octaveslider->setValue(4);
+    persitenceslider->setRange(1,9);
+    persitenceslider->setValue(5);
+
+
+
+
+    rightLayout->addWidget(noisepattern);
+    rightLayout->addWidget(Perlin);
+    rightLayout->addWidget(Simplex);
+    rightLayout->addWidget(Worley);
+    rightLayout->addWidget(use_noise);
+    rightLayout->addWidget(Displacement);
+    rightLayout->addWidget(Direct);
+    rightLayout->addWidget(scale_label);
+    rightLayout->addWidget(scaleslider);
+    rightLayout->addWidget(octave_label);
+    rightLayout->addWidget(octaveslider);
+    rightLayout->addWidget(persistence_label);
+    rightLayout->addWidget(persitenceslider);
+
+
+    noisepattern->setVisible(false);
+    Perlin->setVisible(false);
+    Simplex->setVisible(false);
+    Worley->setVisible(false);
+    use_noise->setVisible(false);
+    Displacement->setVisible(false);
+    Direct->setVisible(false);
+    scale_label->setVisible(false);
+    scaleslider->setVisible(false);
+    octave_label->setVisible(false);
+    octaveslider->setVisible(false);
+    persistence_label->setVisible(false);
+    persitenceslider->setVisible(false);
+
+
+    //convulational Filter Node
+    QLabel *filter=new QLabel("Filter");
+    QCheckBox *Sharpness= new QCheckBox("Sharpness");
+    QCheckBox *Emboss = new QCheckBox("Emboss");
+    QCheckBox *Edgeenhance= new QCheckBox("Edge Enhance");
+     QCheckBox *Custom= new QCheckBox("Custom Kernel");
+    QButtonGroup *filter_gr = new QButtonGroup();
+    filter_gr ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    filter_gr ->addButton(Sharpness, 0);
+    filter_gr->addButton(Emboss, 1);
+    filter_gr->addButton(Edgeenhance, 2);
+    filter_gr->addButton(Custom,3);
+    QComboBox* kernel = new QComboBox;
+    kernelSize->setObjectName("kernelSizeDropdown");
+
+    // Add values to the dropdown
+    kernel->addItem("3*3");
+    kernel->addItem("5*5");
+
+
+
+
+    // QGridLayout *matrixLayout = new QGridLayout();
+    // matrixLayout->setSpacing(6);
+
+    // // Create 3x3 matrix of line edits
+    // const int rows = 3;
+    // const int cols = 3;
+    // QVector<QVector<QLineEdit*>> cells(rows, QVector<QLineEdit*>(cols));
+
+    // for (int i = 0; i < rows; ++i) {
+    //     for (int j = 0; j < cols; ++j) {
+    //         QLineEdit *cell = new QLineEdit();
+    //         cell->setFixedSize(80, 30);
+    //         cell->setAlignment(Qt::AlignCenter);
+    //         cell->setStyleSheet("border: 1px solid #3878B8; border-radius: 3px;");
+    //         matrixLayout->addWidget(cell, i, j);
+    //         cells[i][j] = cell;
+    //     }
+    // }
+    // QPushButton *saveButton = new QPushButton("Save Matrix");
+    // saveButton->setStyleSheet("background-color: #3878B8; color: white; padding: 5px;");
+    // QWidget *matrixWidget = new QWidget();
+    // matrixWidget->setLayout(matrixLayout);
+    rightLayout->addWidget(filter);
+    rightLayout->addWidget(Sharpness);
+    rightLayout->addWidget(Emboss);
+    rightLayout->addWidget(Edgeenhance);
+    rightLayout->addWidget(Custom);
+    rightLayout->addWidget(kernel);
+    // rightLayout->addWidget(matrixWidget);
+    // rightLayout->addWidget(saveButton);
+    filter->setVisible(false);
+    Sharpness->setVisible(false);
+    Emboss->setVisible(false);
+    Edgeenhance->setVisible(false);
+    Custom->setVisible(false);
+    kernel->setVisible(false);
+    // matrixWidget->setVisible(false);
+    // saveButton->setVisible(false);
+
+
+    QVector<QVector<double>> sharpnessMatrix = {
+        {0, -1, 0},
+        {-1, 5, -1},
+        {0, -1, 0}
+    };
+    QVector<QVector<double>> embossMatrix = {
+        {-2, -1, 0},
+        {-1, 1, 1},
+        {0, 1, 2}
+    };
+    QVector<QVector<double>> edgeEnhanceMatrix = {
+        {0, 0, 0},
+        {-1, 1, 0},
+        {0, 0, 0}
+    };
+
+    //on click
+    QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
+                     [&](QtNodes::NodeId const &nodeId) {
+                         auto &graphModel = scene.graphModel();
+
+                         auto filter_ = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<FilterNode>(nodeId);
+
+                         if (filter_) {
+                             filter->setVisible(true);
+                             Sharpness->setVisible(true);
+                             Emboss->setVisible(true);
+                             Edgeenhance->setVisible(true);
+                             Custom->setVisible(true);
+                             QObject::disconnect(filter_gr, nullptr, nullptr, nullptr);
+                             QObject::connect(filter_gr, &QButtonGroup::idClicked, [=](int id) {
+                                 switch (id) {
+                                 case 0:
+                                     kernel->setVisible(false);
+                                     for (int i = 0; i < rightLayout->count(); ++i) {
+                                         QWidget *widget = rightLayout->itemAt(i)->widget();
+                                         if (widget && widget != kernel && widget != filter &&
+                                             widget != Sharpness && widget != Emboss && widget != Edgeenhance && widget != Custom) {
+                                             widget->deleteLater();
+                                         }
+                                     }
+                                     filter_->setmatrix(sharpnessMatrix);
+                                     break;
+                                 case 1:
+                                      kernel->setVisible(false);
+                                     for (int i = 0; i < rightLayout->count(); ++i) {
+                                         QWidget *widget = rightLayout->itemAt(i)->widget();
+                                         if (widget && widget != kernel && widget != filter &&
+                                             widget != Sharpness && widget != Emboss && widget != Edgeenhance && widget != Custom) {
+                                             widget->deleteLater();
+                                         }
+                                     }
+                                     filter_->setmatrix(embossMatrix);
+                                     break;
+                                 case 2:
+                                      kernel->setVisible(false);
+                                     for (int i = 0; i < rightLayout->count(); ++i) {
+                                         QWidget *widget = rightLayout->itemAt(i)->widget();
+                                         if (widget && widget != kernel && widget != filter &&
+                                             widget != Sharpness && widget != Emboss && widget != Edgeenhance && widget != Custom) {
+                                             widget->deleteLater();
+                                         }
+                                     }
+                                     filter_->setmatrix(edgeEnhanceMatrix);
+                                     break;
+                                 case 3:
+                                     kernel->setVisible(true);
+                                     // First, clear any existing matrix widget
+                                     for (int i = 0; i < rightLayout->count(); ++i) {
+                                         QWidget *widget = rightLayout->itemAt(i)->widget();
+                                         if (widget && widget != kernel && widget != filter &&
+                                             widget != Sharpness && widget != Emboss && widget != Edgeenhance && widget != Custom) {
+                                             widget->deleteLater();
+                                         }
+                                     }
+
+                                     // Generate 3x3 matrix by default
+                                     QGridLayout *matrixLayout = new QGridLayout();
+                                     matrixLayout->setSpacing(6);
+
+                                     // Create 3x3 matrix of line edits
+                                     const int rows = 3;
+                                     const int cols = 3;
+                                     QVector<QVector<QLineEdit*>> cells(rows, QVector<QLineEdit*>(cols));
+
+                                     for (int i = 0; i < rows; ++i) {
+                                         for (int j = 0; j < cols; ++j) {
+                                             QLineEdit *cell = new QLineEdit();
+                                             cell->setFixedSize(80, 30);
+                                             cell->setAlignment(Qt::AlignCenter);
+                                             cell->setStyleSheet("border: 1px solid #3878B8; border-radius: 3px;");
+                                             matrixLayout->addWidget(cell, i, j);
+                                             cells[i][j] = cell;
+                                         }
+                                     }
+
+                                     QPushButton *saveButton = new QPushButton("Save Matrix");
+                                     saveButton->setStyleSheet("background-color: #3878B8; color: white; padding: 5px;");
+                                     QWidget *matrixWidget = new QWidget();
+                                     matrixWidget->setLayout(matrixLayout);
+                                     rightLayout->addWidget(matrixWidget);
+                                     rightLayout->addWidget(saveButton);
+                                     QObject::connect(saveButton, &QPushButton::clicked, [=]() {
+                                         QVector<QVector<double>> matrix(rows, QVector<double>(cols));
+                                         for (int i = 0; i < rows; ++i) {
+                                             for (int j = 0; j < cols; ++j) {
+                                                 bool ok;
+                                                 double value = cells[i][j]->text().toDouble(&ok);
+                                                 matrix[i][j] = ok ? value : 0.0; // Default to 0 if conversion fails
+                                             }
+                                         }
+                                         filter_->setmatrix(matrix);
+                                     });
+
+                                     // Then set up the dropdown connection for future changes
+                                     QObject::disconnect(kernel, nullptr, nullptr, nullptr);
+                                     QObject::connect(kernel, QOverload<int>::of(&QComboBox::currentIndexChanged), [=](int index) {
+                                         QString selectedText = kernel->itemText(index);
+
+                                         // Clear any existing matrix widget
+                                         for (int i = 0; i < rightLayout->count(); ++i) {
+                                             QWidget *widget = rightLayout->itemAt(i)->widget();
+                                             if (widget && widget != kernel && widget != filter &&
+                                                 widget != Sharpness && widget != Emboss && widget != Edgeenhance && widget != Custom) {
+                                                 widget->deleteLater();
+                                             }
+                                         }
+
+                                         if (selectedText == "3*3") {
+                                             // Create 3x3 matrix (same code as default)
+                                             QGridLayout *matrixLayout = new QGridLayout();
+                                             matrixLayout->setSpacing(6);
+
+                                             const int rows = 3;
+                                             const int cols = 3;
+                                             QVector<QVector<QLineEdit*>> cells(rows, QVector<QLineEdit*>(cols));
+
+                                             for (int i = 0; i < rows; ++i) {
+                                                 for (int j = 0; j < cols; ++j) {
+                                                     QLineEdit *cell = new QLineEdit();
+                                                     cell->setFixedSize(80, 30);
+                                                     cell->setAlignment(Qt::AlignCenter);
+                                                     cell->setStyleSheet("border: 1px solid #3878B8; border-radius: 3px;");
+                                                     matrixLayout->addWidget(cell, i, j);
+                                                     cells[i][j] = cell;
+                                                 }
+                                             }
+
+                                             QPushButton *saveButton = new QPushButton("Save Matrix");
+                                             saveButton->setStyleSheet("background-color: #3878B8; color: white; padding: 5px;");
+                                             QWidget *matrixWidget = new QWidget();
+                                             matrixWidget->setLayout(matrixLayout);
+                                             rightLayout->addWidget(matrixWidget);
+                                             rightLayout->addWidget(saveButton);
+                                             QObject::connect(saveButton, &QPushButton::clicked, [=]() {
+                                                 QVector<QVector<double>> matrix(rows, QVector<double>(cols));
+                                                 for (int i = 0; i < rows; ++i) {
+                                                     for (int j = 0; j < cols; ++j) {
+                                                         bool ok;
+                                                         double value = cells[i][j]->text().toDouble(&ok);
+                                                         matrix[i][j] = ok ? value : 0.0; // Default to 0 if conversion fails
+                                                     }
+                                                 }
+                                                 filter_->setmatrix(matrix);
+                                             });
+                                         }
+                                         else if (selectedText == "5*5") {
+                                             // Create 5x5 matrix
+                                             QGridLayout *matrixLayout = new QGridLayout();
+                                             matrixLayout->setSpacing(6);
+
+                                             const int rows = 5;
+                                             const int cols = 5;
+                                             QVector<QVector<QLineEdit*>> cells(rows, QVector<QLineEdit*>(cols));
+
+                                             for (int i = 0; i < rows; ++i) {
+                                                 for (int j = 0; j < cols; ++j) {
+                                                     QLineEdit *cell = new QLineEdit();
+                                                     cell->setFixedSize(60, 30);
+                                                     cell->setAlignment(Qt::AlignCenter);
+                                                     cell->setStyleSheet("border: 1px solid #3878B8; border-radius: 3px;");
+                                                     matrixLayout->addWidget(cell, i, j);
+                                                     cells[i][j] = cell;
+                                                 }
+                                             }
+
+                                             QPushButton *saveButton = new QPushButton("Save Matrix");
+                                             saveButton->setStyleSheet("background-color: #3878B8; color: white; padding: 5px;");
+                                             QWidget *matrixWidget = new QWidget();
+                                             matrixWidget->setLayout(matrixLayout);
+                                             rightLayout->addWidget(matrixWidget);
+                                             rightLayout->addWidget(saveButton);
+                                             QObject::connect(saveButton, &QPushButton::clicked, [=]() {
+                                                 QVector<QVector<double>> matrix(rows, QVector<double>(cols));
+                                                 for (int i = 0; i < rows; ++i) {
+                                                     for (int j = 0; j < cols; ++j) {
+                                                         bool ok;
+                                                         double value = cells[i][j]->text().toDouble(&ok);
+                                                         matrix[i][j] = ok ? value : 0.0; // Default to 0 if conversion fails
+                                                     }
+                                                 }
+                                                 filter_->setmatrix(matrix);
+                                             });
+                                         }
+                                     });
+                                     break;
+                                 }
+
+
+                             });
+
+
+
+
+
+                         } else {
+                             filter->setVisible(false);
+                             Sharpness->setVisible(false);
+                             Emboss->setVisible(false);
+                             Edgeenhance->setVisible(false);
+                             Custom->setVisible(false);
+                             kernel->setVisible(false);
+                             // matrixWidget->setVisible(false);
+                             // saveButton->setVisible(false);
+                         }
+                     });
+
+
+
+
+
 
 
 
@@ -580,7 +968,7 @@ int main(int argc, char *argv[])
                                               [=](int value) {
                                                   blend->setopacityLevel(value);
                                               });
-                             QObject::connect(ConstrastSlider, &QSlider::valueChanged,
+                             QObject::connect(mixslider, &QSlider::valueChanged,
                                               [=](int value) {
                                                   blend->setmixLevel(value);
                                               });
@@ -620,6 +1008,96 @@ int main(int argc, char *argv[])
 
                          }
                      });
+
+
+    //Noise Mode on Click
+    QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
+                     [&](QtNodes::NodeId const &nodeId) {
+                         auto &graphModel = scene.graphModel();
+
+                         auto noise = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<Noise>(nodeId);
+
+                         if (noise) {
+                             noisepattern->setVisible(true);
+                             Perlin->setVisible(true);
+                             Simplex->setVisible(true);
+                             Worley->setVisible(true);
+                             use_noise->setVisible(true);
+                             Displacement->setVisible(true);
+                             Direct->setVisible(true);
+                             scale_label->setVisible(true);
+                             scaleslider->setVisible(true);
+                             octave_label->setVisible(true);
+                             octaveslider->setVisible(true);
+                             persistence_label->setVisible(true);
+                             persitenceslider->setVisible(true);
+
+
+
+
+                             QObject::disconnect(scaleslider, nullptr, nullptr, nullptr);
+                             QObject::disconnect(octaveslider, nullptr, nullptr, nullptr);
+                             QObject::disconnect(persitenceslider, nullptr, nullptr, nullptr);
+                             QObject::connect(scaleslider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  noise->setscale(value);
+                                              });
+                             QObject::connect(octaveslider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  noise->setoctave(value);
+                                              });
+                             QObject::connect(persitenceslider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  noise->setpersistence(value);
+                                              });
+                             QObject::disconnect( noisepattern_grp, nullptr, nullptr, nullptr);
+                             QObject::connect( noisepattern_grp, &QButtonGroup::idClicked, [=](int id) {
+                                 switch (id) {
+                                 case 0:
+                                     noise->setnoisepattern("Perlin");
+                                     break;
+                                 case 1:
+                                    noise->setnoisepattern("Simplex");
+                                     break;
+                                 case 2:
+                                     noise->setnoisepattern("(Worley");
+                                     break;
+
+
+                                 }
+                             });
+                             QObject::disconnect(noise_use , nullptr, nullptr, nullptr);
+                             QObject::connect( noise_use , &QButtonGroup::idClicked, [=](int id) {
+                                 switch (id) {
+                                 case 0:
+                                     noise->setnoiseuse("Displacement");
+                                     break;
+                                 case 1:
+                                     noise->setnoiseuse("Direct");
+                                     break;
+
+
+                                 }
+                             });
+                         } else {
+                             noisepattern->setVisible(false);
+                             Perlin->setVisible(false);
+                             Simplex->setVisible(false);
+                             Worley->setVisible(false);
+                             use_noise->setVisible(false);
+                             Displacement->setVisible(false);
+                             Direct->setVisible(false);
+                             scale_label->setVisible(false);
+                             scaleslider->setVisible(false);
+                             octave_label->setVisible(false);
+                             octaveslider->setVisible(false);
+                             persistence_label->setVisible(false);
+                             persitenceslider->setVisible(false);
+
+                         }
+                     });
+
+
 
 
 

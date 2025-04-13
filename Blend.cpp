@@ -129,7 +129,7 @@ void Blend::setInData(std::shared_ptr<NodeData> nodeData, PortIndex const portIn
                     _nodeData = _image2;
                 }
             } catch (const cv::Exception& e) {
-                // Handle OpenCV exceptions
+
                 qWarning("OpenCV error in setInData: %s", e.what());
                 _nodeData = _image2;
             }
@@ -159,7 +159,7 @@ void Blend::setInData(std::shared_ptr<NodeData> nodeData, PortIndex const portIn
     Q_EMIT dataUpdated(0);
 }
 
-// Fix for qPixmapToCvMat function
+
 cv::Mat Blend::qPixmapToCvMat(const QPixmap& pixmap)
 {
     // Check if pixmap is empty
@@ -174,12 +174,11 @@ cv::Mat Blend::qPixmapToCvMat(const QPixmap& pixmap)
     cv::Mat result;
     mat.copyTo(result);
 
-    // Note: Skip the color conversion as it might be causing issues
-    // Qt's ARGB32 format is already compatible with CV_8UC4 format in OpenCV
+
     return result;
 }
 
-// Fix for cvMatToQPixmap function
+
 QPixmap Blend::cvMatToQPixmap(const cv::Mat& mat)
 {
     // Check if mat is empty
@@ -203,7 +202,6 @@ QPixmap Blend::blendImages(const QPixmap& img1, const QPixmap& img2)
     cv::Mat src1 = qPixmapToCvMat(img1);
     cv::Mat src2 = qPixmapToCvMat(img2);
 
-    // Check that conversion worked
     if (src1.empty() || src2.empty()) {
         return img1; // Return the first image if conversion failed
     }
@@ -238,7 +236,7 @@ QPixmap Blend::blendImages(const QPixmap& img1, const QPixmap& img2)
     // Initialize result matrix
     cv::Mat result = src1.clone();
 
-    // Apply different blend modes - with error checking
+
     try {
         if (_blendmode == "Normal") {
             blendNormal(src1, src2WithOpacity, result);
@@ -274,7 +272,7 @@ QPixmap Blend::blendImages(const QPixmap& img1, const QPixmap& img2)
     return cvMatToQPixmap(result);
 }
 
-// Fix for all blend functions - adding error checking
+
 void Blend::blendNormal(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
 {
     // Verify inputs
@@ -314,7 +312,7 @@ void Blend::blendNormal(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
     cv::merge(dstChannels, 4, dst);
 }
 
-// Add similar error checking to all other blend functions
+
 void Blend::blendMultiply(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
 {
     // Verify inputs
@@ -325,7 +323,7 @@ void Blend::blendMultiply(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst
         return;
     }
 
-    // Rest of function unchanged...
+
     // Split the images into channels
     cv::Mat src1Channels[4];
     cv::Mat src2Channels[4];
@@ -359,7 +357,7 @@ void Blend::blendMultiply(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst
     cv::merge(dstChannels, 4, dst);
 }
 
-// Similar error checking for other blend functions
+
 void Blend::blendScreen(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
 {
     // Verify inputs
@@ -370,7 +368,7 @@ void Blend::blendScreen(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
         return;
     }
 
-    /* Rest of function unchanged */
+
     // Split the images into channels
     cv::Mat src1Channels[4];
     cv::Mat src2Channels[4];
@@ -417,7 +415,7 @@ void Blend::blendOverlay(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
         return;
     }
 
-    /* Rest of function unchanged */
+
     // Split the images into channels
     cv::Mat src1Channels[4];
     cv::Mat src2Channels[4];
@@ -484,7 +482,7 @@ void Blend::blendDifference(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& d
         return;
     }
 
-    /* Rest of function unchanged */
+
     // Split the images into channels
     cv::Mat src1Channels[4];
     cv::Mat src2Channels[4];

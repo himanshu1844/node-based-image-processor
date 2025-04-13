@@ -357,6 +357,12 @@
 			null
 		],
 		[
+			"C:/Users/Himanshu Pancholi/ImageProcessor/Filter.h",
+			"MU",
+			"EWIEGA46WW/moc_Filter.cpp",
+			null
+		],
+		[
 			"C:/Users/Himanshu Pancholi/ImageProcessor/ImageLoaderModel.h",
 			"MU",
 			"EWIEGA46WW/moc_ImageLoaderModel.cpp",
@@ -366,6 +372,12 @@
 			"C:/Users/Himanshu Pancholi/ImageProcessor/ImageShowModel.h",
 			"MU",
 			"EWIEGA46WW/moc_ImageShowModel.cpp",
+			null
+		],
+		[
+			"C:/Users/Himanshu Pancholi/ImageProcessor/Noise.h",
+			"MU",
+			"EWIEGA46WW/moc_Noise.cpp",
 			null
 		],
 		[
@@ -482,6 +494,7 @@
 			"MU",
 			null
 		],
+		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Filter.cpp", "MU", null ],
 		[
 			"C:/Users/Himanshu Pancholi/ImageProcessor/ImageLoaderModel.cpp",
 			"MU",
@@ -492,6 +505,7 @@
 			"MU",
 			null
 		],
+		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Noise.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Splitter.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Threshold.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/edge.cpp", "MU", null ],

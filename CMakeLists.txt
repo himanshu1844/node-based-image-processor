@@ -45,6 +45,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         edge.cpp
         Blend.h
         Blend.cpp
+        Noise.cpp
+        Noise.h
+        Filter.h
+        Filter.cpp
     )
 else()
     if(ANDROID)

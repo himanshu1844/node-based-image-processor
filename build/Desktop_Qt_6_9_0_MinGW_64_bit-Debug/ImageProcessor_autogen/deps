@@ -709,10 +709,14 @@ ImageProcessor_autogen/timestamp: \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/BrightnessNode.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/BrightnessNode.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/CMakeLists.txt \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Filter.cpp \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Filter.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/ImageLoaderModel.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/ImageLoaderModel.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/ImageShowModel.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/ImageShowModel.h \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Noise.cpp \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Noise.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/PixmapData.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/Splitter.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/Splitter.h \
