@@ -2,56 +2,56 @@
 928	1778	7660750462381471	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeGraphicsObject.cpp	3ae4b0e07c5ec76a
 240	1141	7660750455953825	nodeeditor/include/QtNodes/internal/moc_DataFlowGraphModel.cpp	b5a11859bdb716b3
 558	963	7660750454110827	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_Definitions.cpp	68075130eff8bd70
-6288	7016	7662225568378483	ImageProcessor.exe	1e9f2d588c00e250
 6	146	7660750445875457	nodeeditor/QtNodes_autogen/timestamp	f91b0175f44f812a
-6	146	7660750445875457	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/QtNodes_autogen/timestamp	f91b0175f44f812a
+3126	3971	7662287487955921	ImageProcessor.exe	182bf3e861edc35d
 853	1339	7660750457986270	nodeeditor/include/QtNodes/internal/moc_NodeData.cpp	1c489d3838c3b5e
 6	146	7660750445875457	nodeeditor/QtNodes_autogen/mocs_compilation.cpp	f91b0175f44f812a
+6	146	7660750445875457	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/QtNodes_autogen/timestamp	f91b0175f44f812a
 6	146	7660750445875457	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/QtNodes_autogen/mocs_compilation.cpp	f91b0175f44f812a
 542	1132	7660750455943818	nodeeditor/include/QtNodes/internal/moc_DefaultVerticalNodeGeometry.cpp	68200d561671ab99
-160	853	7660750452911883	nodeeditor/include/QtNodes/internal/moc_AbstractGraphModel.cpp	bd00b26f1c8f2c31
 149	258	7660750446682988	nodeeditor/qrc_resources.cpp	4ec138add264fa00
-249	1043	7660750454955870	nodeeditor/include/QtNodes/internal/moc_DataFlowGraphicsScene.cpp	6eb220607eb8b16
-377	987	7660750454250812	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DefaultHorizontalNodeGeometry.cpp	57b0db6d231cff67
+160	853	7660750452911883	nodeeditor/include/QtNodes/internal/moc_AbstractGraphModel.cpp	bd00b26f1c8f2c31
 188	377	7660750448506746	nodeeditor/include/QtNodes/internal/moc_Compiler.cpp	c8fce9a8584a04ab
-1043	1360	7660750458220292	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_QStringStdHash.cpp	195cad9e1491b513
-240	1141	7660750455953825	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DataFlowGraphModel.cpp	b5a11859bdb716b3
-592	750	7660750452090087	nodeeditor/include/QtNodes/internal/moc_Export.cpp	6b0d521cbfe37193
+377	987	7660750454250812	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DefaultHorizontalNodeGeometry.cpp	57b0db6d231cff67
+249	1043	7660750454955870	nodeeditor/include/QtNodes/internal/moc_DataFlowGraphicsScene.cpp	6eb220607eb8b16
 149	258	7660750446682988	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/qrc_resources.cpp	4ec138add264fa00
+592	750	7660750452090087	nodeeditor/include/QtNodes/internal/moc_Export.cpp	6b0d521cbfe37193
+240	1141	7660750455953825	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DataFlowGraphModel.cpp	b5a11859bdb716b3
+1043	1360	7660750458220292	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_QStringStdHash.cpp	195cad9e1491b513
 188	377	7660750448506746	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_Compiler.cpp	c8fce9a8584a04ab
-204	542	7660750450098989	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_ConnectionIdHash.cpp	53490abf46b183e9
 166	525	7660750449788993	nodeeditor/include/QtNodes/internal/moc_AbstractNodeGeometry.cpp	4cb78cfc9cbc4f52
+204	542	7660750450098989	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_ConnectionIdHash.cpp	53490abf46b183e9
 166	525	7660750449788993	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_AbstractNodeGeometry.cpp	4cb78cfc9cbc4f52
 222	558	7660750450008989	nodeeditor/include/QtNodes/internal/moc_ConnectionState.cpp	9d4a79a343741550
 204	542	7660750450098989	nodeeditor/include/QtNodes/internal/moc_ConnectionIdHash.cpp	53490abf46b183e9
 222	558	7660750450008989	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_ConnectionState.cpp	9d4a79a343741550
-1086	1648	7660750461093890	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_QUuidStdHash.cpp	a361031fa914128c
-249	1043	7660750454955870	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DataFlowGraphicsScene.cpp	6eb220607eb8b16
-258	927	7660750453636856	nodeeditor/include/QtNodes/internal/moc_DefaultConnectionPainter.cpp	55a1b83a4f9f1d7f
 154	592	7660750450419002	nodeeditor/include/QtNodes/internal/moc_AbstractConnectionPainter.cpp	7596b065d7c680a
+258	927	7660750453636856	nodeeditor/include/QtNodes/internal/moc_DefaultConnectionPainter.cpp	55a1b83a4f9f1d7f
+249	1043	7660750454955870	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DataFlowGraphicsScene.cpp	6eb220607eb8b16
+1086	1648	7660750461093890	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_QUuidStdHash.cpp	a361031fa914128c
 1104	1833	7660750463060204	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_Serializable.cpp	9c2224cdf78f8e8
 154	592	7660750450419002	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_AbstractConnectionPainter.cpp	7596b065d7c680a
 213	735	7660750451977469	nodeeditor/include/QtNodes/internal/moc_ConnectionIdUtils.cpp	5e0c6f9238df7186
 917	1874	7660750463493340	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeDelegateModelRegistry.cpp	6307ed56ac79088f
 213	735	7660750451977469	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_ConnectionIdUtils.cpp	5e0c6f9238df7186
-1122	1780	7660750462381471	nodeeditor/include/QtNodes/internal/moc_Style.cpp	624c7be779df2c12
 592	750	7660750452090087	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_Export.cpp	6b0d521cbfe37193
 750	1551	7660750460190494	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_GraphicsViewStyle.cpp	e5a2cfc5e1a2ea3a
-938	1549	7660750460170500	nodeeditor/include/QtNodes/internal/moc_NodeState.cpp	3f3bee2ab32e72b3
+1122	1780	7660750462381471	nodeeditor/include/QtNodes/internal/moc_Style.cpp	624c7be779df2c12
 174	831	7660750452517440	nodeeditor/include/QtNodes/internal/moc_AbstractNodePainter.cpp	97552caa78867f9f
+938	1549	7660750460170500	nodeeditor/include/QtNodes/internal/moc_NodeState.cpp	3f3bee2ab32e72b3
 174	831	7660750452517440	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_AbstractNodePainter.cpp	97552caa78867f9f
-736	1477	7660750459288720	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_GraphicsView.cpp	7afe7cff80afda00
-196	938	7660750453816855	nodeeditor/include/QtNodes/internal/moc_ConnectionGraphicsObject.cpp	498373a8532daff2
 160	853	7660750452911883	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_AbstractGraphModel.cpp	bd00b26f1c8f2c31
+196	938	7660750453816855	nodeeditor/include/QtNodes/internal/moc_ConnectionGraphicsObject.cpp	498373a8532daff2
+736	1477	7660750459288720	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_GraphicsView.cpp	7afe7cff80afda00
 230	865	7660750453001881	nodeeditor/include/QtNodes/internal/moc_ConnectionStyle.cpp	5dd5f73ef30441ff
 230	865	7660750453001881	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_ConnectionStyle.cpp	5dd5f73ef30441ff
-853	1339	7660750457986270	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeData.cpp	1c489d3838c3b5e
-181	917	7660750453546879	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_BasicGraphicsScene.cpp	995e1da878a5be75
 181	917	7660750453546879	nodeeditor/include/QtNodes/internal/moc_BasicGraphicsScene.cpp	995e1da878a5be75
+181	917	7660750453546879	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_BasicGraphicsScene.cpp	995e1da878a5be75
+853	1339	7660750457986270	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeData.cpp	1c489d3838c3b5e
 258	927	7660750453636856	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DefaultConnectionPainter.cpp	55a1b83a4f9f1d7f
 196	938	7660750453816855	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_ConnectionGraphicsObject.cpp	498373a8532daff2
-525	1086	7660750455519644	nodeeditor/include/QtNodes/internal/moc_DefaultNodePainter.cpp	afdf62f614b39105
 558	963	7660750454110827	nodeeditor/include/QtNodes/internal/moc_Definitions.cpp	68075130eff8bd70
+525	1086	7660750455519644	nodeeditor/include/QtNodes/internal/moc_DefaultNodePainter.cpp	afdf62f614b39105
 377	987	7660750454250812	nodeeditor/include/QtNodes/internal/moc_DefaultHorizontalNodeGeometry.cpp	57b0db6d231cff67
 928	1778	7660750462381471	nodeeditor/include/QtNodes/internal/moc_NodeGraphicsObject.cpp	3ae4b0e07c5ec76a
 525	1086	7660750455519644	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_DefaultNodePainter.cpp	afdf62f614b39105
@@ -66,8 +66,8 @@
 736	1477	7660750459288720	nodeeditor/include/QtNodes/internal/moc_GraphicsView.cpp	7afe7cff80afda00
 938	1549	7660750460170500	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeState.cpp	3f3bee2ab32e72b3
 750	1551	7660750460190494	nodeeditor/include/QtNodes/internal/moc_GraphicsViewStyle.cpp	e5a2cfc5e1a2ea3a
-14480	14806	7660750589693173	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_Export.cpp.obj	71fbe8144522e717
 1086	1648	7660750461093890	nodeeditor/include/QtNodes/internal/moc_QUuidStdHash.cpp	a361031fa914128c
+14480	14806	7660750589693173	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_Export.cpp.obj	71fbe8144522e717
 1122	1780	7660750462381471	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_Style.cpp	624c7be779df2c12
 1339	1789	7660750462598070	nodeeditor/include/QtNodes/internal/moc_locateNode.cpp	148564b0d141a628
 1339	1789	7660750462598070	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_locateNode.cpp	148564b0d141a628
@@ -77,14 +77,14 @@
 963	1793	7660750462608055	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeStyle.cpp	30bc28baf71f3ec2
 1132	1797	7660750462670553	nodeeditor/include/QtNodes/internal/moc_StyleCollection.cpp	a753455017e538de
 1132	1797	7660750462670553	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_StyleCollection.cpp	a753455017e538de
-8392	13421	7660750528817988	nodeeditor/CMakeFiles/QtNodes.dir/src/NodeState.cpp.obj	ebab21b156b95df0
 1104	1833	7660750463060204	nodeeditor/include/QtNodes/internal/moc_Serializable.cpp	9c2224cdf78f8e8
+8392	13421	7660750528817988	nodeeditor/CMakeFiles/QtNodes.dir/src/NodeState.cpp.obj	ebab21b156b95df0
 865	1837	7660750463091279	nodeeditor/include/QtNodes/internal/moc_NodeDelegateModel.cpp	fdc90dc72be60751
 865	1837	7660750463091279	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeDelegateModel.cpp	fdc90dc72be60751
-1894	7572	7660750463823952	nodeeditor/CMakeFiles/QtNodes.dir/src/ConnectionState.cpp.obj	35d79340761e5518
 917	1874	7660750463493340	nodeeditor/include/QtNodes/internal/moc_NodeDelegateModelRegistry.cpp	6307ed56ac79088f
-3727	10531	7660750482164231	nodeeditor/CMakeFiles/QtNodes.dir/src/GraphicsViewStyle.cpp.obj	d5ded8ecd4e715ec
+1894	7572	7660750463823952	nodeeditor/CMakeFiles/QtNodes.dir/src/ConnectionState.cpp.obj	35d79340761e5518
 1874	1993	7660750463633349	nodeeditor/CMakeFiles/QtNodes.dir/QtNodes_autogen/mocs_compilation.cpp.obj	a671941520aabbef
+3727	10531	7660750482164231	nodeeditor/CMakeFiles/QtNodes.dir/src/GraphicsViewStyle.cpp.obj	d5ded8ecd4e715ec
 1927	3725	7660750464155627	nodeeditor/CMakeFiles/QtNodes.dir/src/Definitions.cpp.obj	1cf47273c143a1de
 1898	7704	7660750463865615	nodeeditor/CMakeFiles/QtNodes.dir/src/ConnectionStyle.cpp.obj	af682b8f8e32e740
 1914	7711	7660750464025627	nodeeditor/CMakeFiles/QtNodes.dir/src/DefaultHorizontalNodeGeometry.cpp.obj	2f9cc1f463e9c268
@@ -93,18 +93,18 @@
 1882	8441	7660750463716584	nodeeditor/CMakeFiles/QtNodes.dir/src/AbstractNodeGeometry.cpp.obj	faedfaf564d0f56f
 1910	8708	7660750463985620	nodeeditor/CMakeFiles/QtNodes.dir/src/DefaultConnectionPainter.cpp.obj	ea47a81a09685d3d
 1890	9499	7660750463782042	nodeeditor/CMakeFiles/QtNodes.dir/src/ConnectionGraphicsObject.cpp.obj	95c4e3a1684826be
-14458	17886	7660750589472846	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_Definitions.cpp.obj	64ea0129510220fd
 1918	10196	7660750464075615	nodeeditor/CMakeFiles/QtNodes.dir/src/DefaultNodePainter.cpp.obj	2a19328715b1e1b2
+14458	17886	7660750589472846	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_Definitions.cpp.obj	64ea0129510220fd
 1902	10512	7660750463905614	nodeeditor/CMakeFiles/QtNodes.dir/src/DataFlowGraphModel.cpp.obj	fade33279c56ce05
-10921	11216	7660750554107912	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_AbstractNodePainter.cpp.obj	198da2a39591f34e
 10531	10762	7660750550200177	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_AbstractConnectionPainter.cpp.obj	a387f42bb11ffd59
+10921	11216	7660750554107912	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_AbstractNodePainter.cpp.obj	198da2a39591f34e
 1885	10921	7660750463738141	nodeeditor/CMakeFiles/QtNodes.dir/src/BasicGraphicsScene.cpp.obj	b73df14be994c23
 1906	10994	7660750463945616	nodeeditor/CMakeFiles/QtNodes.dir/src/DataFlowGraphicsScene.cpp.obj	f023f39275ccf6c6
 10860	11176	7660750553483816	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_AbstractNodeGeometry.cpp.obj	e8e6b788035ff0de
 11176	11528	7660750556648338	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_Compiler.cpp.obj	6e97d6ef231572f7
 11529	11918	7660750560181935	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_ConnectionIdHash.cpp.obj	6589854c96e88b98
-11918	12404	7660750564065845	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_ConnectionIdUtils.cpp.obj	2737254f2b9b59ec
 1205	6895	7661906584000767	CMakeFiles/ImageProcessor.dir/Splitter.cpp.obj	5404e9551919c0ea
+11918	12404	7660750564065845	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_ConnectionIdUtils.cpp.obj	2737254f2b9b59ec
 12405	12829	7660750568934503	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_ConnectionState.cpp.obj	6d56e22daee6d3fa
 12829	13240	7660750573180135	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_ConnectionStyle.cpp.obj	469094945dde7e7b
 7574	14151	7660750520634520	nodeeditor/CMakeFiles/QtNodes.dir/src/NodeConnectionInteraction.cpp.obj	d3965565c20dcf05
@@ -121,8 +121,8 @@
 14806	15126	7660750592948574	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_NodeData.cpp.obj	bb90aba835983398
 14984	15220	7660750594737026	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_NodeDelegateModelRegistry.cpp.obj	8fd83470d02655a2
 15221	15554	7660750597092766	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_NodeState.cpp.obj	78af1c827d69aa8d
-20013	21821	7660750662966539	bin/libQtNodes.dll	88aaf89fa004dd28
 10196	15707	7660750546852076	nodeeditor/CMakeFiles/QtNodes.dir/src/locateNode.cpp.obj	56c444eeda3e0948
+20013	21821	7660750662966539	bin/libQtNodes.dll	88aaf89fa004dd28
 15554	15955	7660750600432296	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_NodeStyle.cpp.obj	6e2d8f3ea685ce02
 15707	16002	7660750601961845	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_OperatingSystem.cpp.obj	16313e0fbc4816f6
 10762	16139	7660750552511382	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_AbstractGraphModel.cpp.obj	ada8188331665e56
@@ -131,9 +131,9 @@
 16139	16430	7660750606286348	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_Serializable.cpp.obj	a138ce37ec0c2ac6
 16333	16609	7660750608222200	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_StyleCollection.cpp.obj	14f34c31aad8262e
 16339	16620	7660750608282204	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_UndoCommands.cpp.obj	d79bacf7891290cb
-16430	16645	7660750609197732	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_locateNode.cpp.obj	50f4b5db9da6398
+1169	6236	7662271091415580	CMakeFiles/ImageProcessor.dir/BlurNode.cpp.obj	26a9908c7b0a2861
 16324	16623	7660750608132213	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_Style.cpp.obj	217363c1c7c764dc
-1278	5591	7662225518270643	CMakeFiles/ImageProcessor.dir/BlurNode.cpp.obj	26a9908c7b0a2861
+16430	16645	7660750609197732	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_locateNode.cpp.obj	50f4b5db9da6398
 9499	16872	7660750539883041	nodeeditor/CMakeFiles/QtNodes.dir/src/UndoCommands.cpp.obj	b3c828e7c25b8941
 1993	16984	7660750464821307	nodeeditor/CMakeFiles/QtNodes.dir/src/GraphicsView.cpp.obj	fffd86c2daf0f191
 10994	17028	7660750554837319	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_BasicGraphicsScene.cpp.obj	2dce5bff778468f2
@@ -144,64 +144,69 @@
 14813	19346	7660750593018574	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_NodeDelegateModel.cpp.obj	7298307286d0f2ec
 7995	20013	7660750524835433	nodeeditor/CMakeFiles/QtNodes.dir/src/NodeGraphicsObject.cpp.obj	3b8a205e58cfb991
 20013	21821	7660750662966539	lib/libQtNodes.dll.a	88aaf89fa004dd28
-58	1267	7662225517165472	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-58	1267	7662225517165472	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-58	1267	7662225517165472	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-58	1267	7662225517165472	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-1269	5614	7662225518180631	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
-1190	5623	7661906583852531	CMakeFiles/ImageProcessor.dir/mainwindow.cpp.obj	868617e5975127b4
-1194	6942	7661906583899148	CMakeFiles/ImageProcessor.dir/ImageShowModel.cpp.obj	452f8e0da6f4a61c
-1198	6709	7661906583931451	CMakeFiles/ImageProcessor.dir/ImageLoaderModel.cpp.obj	c72a685d6670d8cd
-1273	6288	7662225518230611	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
-959	5231	7661907488863919	CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj	6de6c7e5a8302b2
-30	1020	7662259659293091	build.ninja	e98b7a46e6506bd5
-68	6046	7662259659293091	build.ninja	e98b7a46e6506bd5
-30	738	7662259668635422	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-30	738	7662259668635422	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-30	738	7662259668635422	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-30	738	7662259668635422	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-739	7837	7662259669265166	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
-741	9223	7662259669290078	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
-61	234	7662260628464455	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-61	234	7662260628464455	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-61	234	7662260628464455	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-61	234	7662260628464455	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-52	294	7662260687637363	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-52	294	7662260687637363	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-52	294	7662260687637363	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-52	294	7662260687637363	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-295	2558	7662260690064464	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
-2558	4044	7662260712698597	ImageProcessor.exe	182bf3e861edc35d
-62	1158	7662271089997984	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-62	1158	7662271089997984	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-62	1158	7662271089997984	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-62	1158	7662271089997984	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-1169	6236	7662271091415580	CMakeFiles/ImageProcessor.dir/BlurNode.cpp.obj	26a9908c7b0a2861
-1159	6390	7662271091322692	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
-1164	7291	7662271091362830	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
-44	266	7662271517692423	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-44	266	7662271517692423	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-44	266	7662271517692423	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-44	266	7662271517692423	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-267	3732	7662271519930300	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
-3732	4624	7662271554570971	ImageProcessor.exe	182bf3e861edc35d
-14	196	7662272979250976	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-14	196	7662272979250976	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-14	196	7662272979250976	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-14	196	7662272979250976	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-197	2361	7662272981075975	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
-2361	3176	7662273002709889	ImageProcessor.exe	182bf3e861edc35d
-61	1367	7662281999222714	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-61	1367	7662281999222714	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-61	1367	7662281999222714	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-61	1367	7662281999222714	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-1377	5630	7662282000495915	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
-1369	5722	7662282000418421	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
-1374	6494	7662282000463930	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
-6494	7266	7662282051664233	ImageProcessor.exe	182bf3e861edc35d
 42	251	7662287457109330	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+251	3126	7662287459207403	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
 42	251	7662287457109330	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
 42	251	7662287457109330	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
 42	251	7662287457109330	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-251	3126	7662287459207403	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
-3126	3971	7662287487955921	ImageProcessor.exe	182bf3e861edc35d
+1369	5722	7662282000418421	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
+1190	5623	7661906583852531	CMakeFiles/ImageProcessor.dir/mainwindow.cpp.obj	868617e5975127b4
+1194	6942	7661906583899148	CMakeFiles/ImageProcessor.dir/ImageShowModel.cpp.obj	452f8e0da6f4a61c
+1198	6709	7661906583931451	CMakeFiles/ImageProcessor.dir/ImageLoaderModel.cpp.obj	c72a685d6670d8cd
+1374	6494	7662282000463930	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
+959	5231	7661907488863919	CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj	6de6c7e5a8302b2
+68	6046	7662371871530813	build.ninja	e98b7a46e6506bd5
+47	1766	7662371871530813	build.ninja	e98b7a46e6506bd5
+61	1344	7662371885664161	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+61	1344	7662371885664161	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+61	1344	7662371885664161	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+61	1344	7662371885664161	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+1354	9021	7662371887007231	CMakeFiles/ImageProcessor.dir/edge.cpp.obj	973b42e74e78d504
+1346	10043	7662371886921662	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
+57	310	7662372467730170	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+57	310	7662372467730170	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+57	310	7662372467730170	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+57	310	7662372467730170	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+311	4043	7662372470266378	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
+4043	4923	7662372507580583	ImageProcessor.exe	5b23a5852e326192
+49	281	7662373088367578	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+49	281	7662373088367578	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+49	281	7662373088367578	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+49	281	7662373088367578	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+282	3778	7662373090698766	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
+3778	4636	7662373125651715	ImageProcessor.exe	5b23a5852e326192
+56	273	7662374828393441	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+56	273	7662374828393441	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+56	273	7662374828393441	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+56	273	7662374828393441	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+274	3797	7662374830576640	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
+3797	4657	7662374865803201	ImageProcessor.exe	5b23a5852e326192
+63	1406	7662383427161057	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+63	1406	7662383427161057	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+63	1406	7662383427161057	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+63	1406	7662383427161057	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+1417	5541	7662383428567696	CMakeFiles/ImageProcessor.dir/edge.cpp.obj	973b42e74e78d504
+1407	6049	7662383428470706	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
+1412	7135	7662383428512951	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
+7135	8007	7662383485745287	ImageProcessor.exe	5b23a5852e326192
+64	1528	7662400906633371	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+64	1528	7662400906633371	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+64	1528	7662400906633371	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+64	1528	7662400906633371	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+1530	6710	7662400907798832	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
+1540	7484	7662400907909764	CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj	6de6c7e5a8302b2
+1535	7916	7662400907859439	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
+55	1176	7662402179793359	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+55	1176	7662402179793359	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+55	1176	7662402179793359	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+55	1176	7662402179793359	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+1178	6040	7662402180773503	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
+1186	6564	7662402180852686	CMakeFiles/ImageProcessor.dir/edge.cpp.obj	973b42e74e78d504
+1182	6927	7662402180808298	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
+6927	7769	7662402238264407	ImageProcessor.exe	5b23a5852e326192
+23	262	7662409807109370	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+23	262	7662409807109370	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+23	262	7662409807109370	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+23	262	7662409807109370	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+263	3402	7662409809500253	CMakeFiles/ImageProcessor.dir/edge.cpp.obj	973b42e74e78d504
+3402	4287	7662409840892828	ImageProcessor.exe	5b23a5852e326192

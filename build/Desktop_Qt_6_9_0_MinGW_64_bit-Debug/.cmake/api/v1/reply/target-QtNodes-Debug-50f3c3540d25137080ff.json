@@ -403,11 +403,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "QtNodes_autogen::@a19d43accf92d792a816"
+			"id" : "QtNodes_autogen_timestamp_deps::@a19d43accf92d792a816"
 		},
 		{
-			"id" : "QtNodes_autogen_timestamp_deps::@a19d43accf92d792a816"
+			"backtrace" : 0,
+			"id" : "QtNodes_autogen::@a19d43accf92d792a816"
 		}
 	],
 	"id" : "QtNodes::@a19d43accf92d792a816",

@@ -381,6 +381,12 @@
 			null
 		],
 		[
+			"C:/Users/Himanshu Pancholi/ImageProcessor/edge.h",
+			"MU",
+			"EWIEGA46WW/moc_edge.cpp",
+			null
+		],
+		[
 			"C:/Users/Himanshu Pancholi/ImageProcessor/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -481,6 +487,7 @@
 		],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Splitter.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Threshold.cpp", "MU", null ],
+		[ "C:/Users/Himanshu Pancholi/ImageProcessor/edge.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/main.cpp", "MU", null ],
 		[
 			"C:/Users/Himanshu Pancholi/ImageProcessor/mainwindow.cpp",

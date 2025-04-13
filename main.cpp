@@ -15,6 +15,7 @@
 #include <QtNodes/NodeDelegateModel>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <QComboBox>
 #include <QButtonGroup>
 #include "ImageLoaderModel.h"
 #include "ImageShowModel.h"
@@ -22,6 +23,7 @@
 #include "Splitter.h"
 #include "BlurNode.h"
 #include "Threshold.h"
+#include "edge.h"
 using QtNodes::ConnectionStyle;
 using QtNodes::DataFlowGraphicsScene;
 using QtNodes::DataFlowGraphModel;
@@ -38,7 +40,8 @@ static std::shared_ptr<NodeDelegateModelRegistry> registerDataModels()
     ret->registerModel<BrightnessNode>();
     ret->registerModel<Splitter>();
     ret->registerModel<BlurNode>();
-    ret->registerModel<ThresholdNode>();
+    ret->registerModel<ThresholdNode>();\
+    ret->registerModel<Edge>();
     return ret;
 }
 
@@ -187,6 +190,55 @@ int main(int argc, char *argv[])
     thresholdModeGroup ->addButton(Binary, 0);
     thresholdModeGroup ->addButton(Adaptive, 1);
     thresholdModeGroup ->addButton(Otsu, 2);
+
+    //edge  Node
+    QCheckBox *overlay=new QCheckBox("Overlay Image Over Original");
+    QLabel *sliderLabel_ed = new QLabel(" Threshold:");
+    QSlider *ThresholdSlider_ed = new QSlider(Qt::Horizontal);
+    QLabel *edgemethod = new QLabel("edge detection Method:");
+    QCheckBox *Sobel= new QCheckBox("Sobel");
+    QCheckBox *Canny = new QCheckBox("Canny");
+    QLabel *kernelSize_label= new QLabel("Kernel Size:");
+    QComboBox* kernelSize = new QComboBox;
+    kernelSize->setObjectName("kernelSizeDropdown");
+
+    // Add values to the dropdown
+    kernelSize->addItem("1");
+    kernelSize->addItem("3");
+    kernelSize->addItem("5");
+    kernelSize->addItem("7");
+
+    ThresholdSlider_ed->setRange(0, 255);
+    ThresholdSlider_ed->setValue(127);
+    // Initially hidden
+    overlay->setVisible(false);
+    kernelSize_label->setVisible(false);
+    kernelSize->setVisible(false);
+    edgemethod->setVisible(false);
+    Sobel->setVisible(false);
+    Canny->setVisible(false);
+    sliderLabel_ed->setVisible(false);
+    ThresholdSlider_ed->setVisible(false);
+        // Add to the right sidebar layout
+    rightLayout->addWidget(overlay);
+    rightLayout->addWidget(edgemethod);
+    rightLayout->addWidget(Sobel);
+    rightLayout->addWidget(Canny);
+    rightLayout->addWidget(kernelSize_label);
+    rightLayout->addWidget(kernelSize);
+
+    rightLayout->addWidget(sliderLabel_ed);
+    rightLayout->addWidget(ThresholdSlider_ed);
+
+    //create exclusive checkbox
+    QButtonGroup *thresholdModeGroup_ed = new QButtonGroup();
+    thresholdModeGroup_ed ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    thresholdModeGroup_ed ->addButton(Sobel, 0);
+    thresholdModeGroup_ed->addButton(Canny, 1);
+
+
+
 
 
 
@@ -365,6 +417,72 @@ int main(int argc, char *argv[])
 
                          }
                      });
+
+    //edge detection Node on click
+    QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
+                     [&](QtNodes::NodeId const &nodeId) {
+                         auto &graphModel = scene.graphModel();
+
+                         auto edgeNode = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<Edge>(nodeId);
+
+                         if (edgeNode) {
+                             overlay->setVisible(true);
+                              kernelSize_label->setVisible(true);
+                             kernelSize->setVisible(true);
+                             edgemethod->setVisible(true);
+                             Sobel->setVisible(true);
+                             Canny->setVisible(true);
+                             sliderLabel_ed->setVisible(true);
+                             ThresholdSlider_ed->setVisible(true);
+
+
+
+
+
+                             QObject::disconnect(ThresholdSlider_ed, nullptr, nullptr, nullptr);
+
+
+                             QObject::connect(ThresholdSlider_ed, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  edgeNode->setthreshold(value);
+                                              });
+                             QObject::disconnect( thresholdModeGroup_ed, nullptr, nullptr, nullptr);
+                             QObject::connect( thresholdModeGroup_ed, &QButtonGroup::idClicked, [=](int id) {
+                                 switch (id) {
+                                 case 0:
+                                     edgeNode->setedgemethod("Sobel");
+                                     break;
+                                 case 1:
+                                     edgeNode->setedgemethod("Canny");
+                                     break;
+
+                                 }
+                             });
+                             QObject::disconnect(kernelSize, nullptr, nullptr, nullptr);
+                             QObject::connect(kernelSize, QOverload<int>::of(&QComboBox::currentIndexChanged),  [=](int index) {
+                                 QString selectedText = kernelSize->itemText(index);
+                                 int kernelSize = selectedText.toInt(); // Convert "1", "3", "5", etc. to int
+
+                                 edgeNode->setKernelSize(kernelSize);
+                             });
+                             QObject::disconnect(overlay, nullptr, nullptr, nullptr);
+                             QObject::connect(overlay, &QCheckBox::toggled, overlay, [edgeNode](bool checked) {
+                                 edgeNode->setOverlay(checked);
+                             });
+
+                         } else {
+                             overlay->setVisible(false);
+                              kernelSize_label->setVisible(false);
+                             kernelSize->setVisible(false);
+                             edgemethod->setVisible(false);
+                             Sobel->setVisible(false);
+                             Canny->setVisible(false);
+                             sliderLabel_ed->setVisible(false);
+                             ThresholdSlider_ed->setVisible(false);
+
+                         }
+                     });
+
 
 
 

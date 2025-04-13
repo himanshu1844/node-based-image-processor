@@ -5,4 +5,5 @@
 #include "EWIEGA46WW/moc_ImageShowModel.cpp"
 #include "EWIEGA46WW/moc_Splitter.cpp"
 #include "EWIEGA46WW/moc_Threshold.cpp"
+#include "EWIEGA46WW/moc_edge.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"

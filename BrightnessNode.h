@@ -55,7 +55,7 @@ protected:
 
 private:
     QLabel *_label;
-
+    cv::Mat _originalMat;
     std::shared_ptr<NodeData> _nodeData;
     int _brightnessValue = 0;
     int _contrastvalue=0;
