@@ -21,7 +21,7 @@
 #include "BrightnessNode.h"
 #include "Splitter.h"
 #include "BlurNode.h"
-
+#include "Threshold.h"
 using QtNodes::ConnectionStyle;
 using QtNodes::DataFlowGraphicsScene;
 using QtNodes::DataFlowGraphModel;
@@ -38,6 +38,7 @@ static std::shared_ptr<NodeDelegateModelRegistry> registerDataModels()
     ret->registerModel<BrightnessNode>();
     ret->registerModel<Splitter>();
     ret->registerModel<BlurNode>();
+    ret->registerModel<ThresholdNode>();
     return ret;
 }
 
@@ -154,6 +155,38 @@ int main(int argc, char *argv[])
     blurModeGroup->addButton(Uniform, 0);
     blurModeGroup->addButton(Horizontal, 1);
     blurModeGroup->addButton(Vertical, 2);
+
+    //ThresholdNode
+    QLabel *sliderLabel_tr = new QLabel(" Threshold:");
+    QSlider *ThresholdSlider = new QSlider(Qt::Horizontal);
+    QLabel *thresholdmethod = new QLabel("Thresholding Method:");
+    QCheckBox *Binary= new QCheckBox("Bianry");
+    QCheckBox *Adaptive = new QCheckBox("Adaptive");
+    QCheckBox *Otsu = new QCheckBox("Otsu");
+    ThresholdSlider->setRange(0, 255);
+    ThresholdSlider->setValue(127);
+    // Initially hidden
+    thresholdmethod->setVisible(false);
+    Binary->setVisible(false);
+    Adaptive->setVisible(false);
+    Otsu->setVisible(false);
+    sliderLabel_tr->setVisible(false);
+    ThresholdSlider->setVisible(false);
+        // Add to the right sidebar layout
+    rightLayout->addWidget(thresholdmethod);
+    rightLayout->addWidget(Binary);
+    rightLayout->addWidget(Adaptive);
+    rightLayout->addWidget(Otsu);
+    rightLayout->addWidget(sliderLabel_tr);
+    rightLayout->addWidget(ThresholdSlider);
+
+    //create exclusive checkbox
+    QButtonGroup *thresholdModeGroup = new QButtonGroup();
+    thresholdModeGroup ->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    thresholdModeGroup ->addButton(Binary, 0);
+    thresholdModeGroup ->addButton(Adaptive, 1);
+    thresholdModeGroup ->addButton(Otsu, 2);
 
 
 
@@ -280,6 +313,59 @@ int main(int argc, char *argv[])
 
                          }
                      });
+
+    //threshold Node on click
+    QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
+                     [&](QtNodes::NodeId const &nodeId) {
+                         auto &graphModel = scene.graphModel();
+
+                         auto thresholdNode = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<ThresholdNode>(nodeId);
+
+                         if (thresholdNode) {
+                             thresholdmethod->setVisible(true);
+                             Binary->setVisible(true);
+                             Adaptive->setVisible(true);
+                             Otsu->setVisible(true);
+                             sliderLabel_tr->setVisible(true);
+                             ThresholdSlider->setVisible(true);
+
+
+
+
+
+                             QObject::disconnect(ThresholdSlider, nullptr, nullptr, nullptr);
+
+
+                             QObject::connect(ThresholdSlider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  thresholdNode->setthreshold(value);
+                                              });
+                             QObject::disconnect(thresholdModeGroup, nullptr, nullptr, nullptr);
+                             QObject::connect(thresholdModeGroup, &QButtonGroup::idClicked, [=](int id) {
+                                 switch (id) {
+                                 case 0:
+                                     thresholdNode->setthresholdmethod("binary");
+                                     break;
+                                 case 1:
+                                     thresholdNode->setthresholdmethod("adaptive");
+                                     break;
+                                 case 2:
+                                     thresholdNode->setthresholdmethod("Otsu");
+                                     break;
+                                 }
+                             });
+
+                         } else {
+                             thresholdmethod->setVisible(false);
+                             Binary->setVisible(false);
+                             Adaptive->setVisible(false);
+                             Otsu->setVisible(false);
+                             sliderLabel_tr->setVisible(false);
+                             ThresholdSlider->setVisible(false);
+
+                         }
+                     });
+
 
 
 

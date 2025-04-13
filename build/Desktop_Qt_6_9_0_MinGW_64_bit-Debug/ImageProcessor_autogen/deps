@@ -692,9 +692,12 @@ ImageProcessor_autogen/timestamp: \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/utility.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/version.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/vsx_utils.hpp \
+	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/highgui.hpp \
+	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/imgcodecs.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/imgproc.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/imgproc/segmentation.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/opencv_modules.hpp \
+	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/videoio.hpp \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVConfig.cmake \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules-release.cmake \
 	C:/Users/Himanshu\ Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules.cmake \
@@ -710,6 +713,8 @@ ImageProcessor_autogen/timestamp: \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/PixmapData.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/Splitter.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/Splitter.h \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Threshold.cpp \
+	C:/Users/Himanshu\ Pancholi/ImageProcessor/Threshold.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \

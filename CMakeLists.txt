@@ -39,6 +39,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Splitter.cpp
         BlurNode.cpp
         BlurNode.h
+        Threshold.h
+        Threshold.cpp
     )
 else()
     if(ANDROID)

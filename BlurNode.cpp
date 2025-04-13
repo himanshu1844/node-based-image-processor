@@ -83,12 +83,14 @@ void BlurNode::setInData(std::shared_ptr<NodeData> nodeData, PortIndex const)
         _nodeData = _originalData;
         processImage();
     } else {
+
         _originalData = nullptr;
         _nodeData = nullptr;
         _label->setPixmap(QPixmap());
     }
     Q_EMIT dataUpdated(0);
     }
+
 
 void BlurNode::setRadiusLevel(int value) {
     _radius = value;
