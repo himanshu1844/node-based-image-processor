@@ -15,10 +15,12 @@
 #include <QtNodes/NodeDelegateModel>
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <QButtonGroup>
 #include "ImageLoaderModel.h"
 #include "ImageShowModel.h"
 #include "BrightnessNode.h"
 #include "Splitter.h"
+#include "BlurNode.h"
 
 using QtNodes::ConnectionStyle;
 using QtNodes::DataFlowGraphicsScene;
@@ -35,6 +37,7 @@ static std::shared_ptr<NodeDelegateModelRegistry> registerDataModels()
     ret->registerModel<ImageLoaderModel>();
     ret->registerModel<BrightnessNode>();
     ret->registerModel<Splitter>();
+    ret->registerModel<BlurNode>();
     return ret;
 }
 
@@ -93,9 +96,11 @@ int main(int argc, char *argv[])
     rightLayout->addWidget(new QPushButton("Settings"));
     rightLayout->addStretch();
     rightSidebar->setLayout(rightLayout);
+
+
+
     //brightness slider
     QLabel *sliderLabel = new QLabel("Brightness:");
-
     QSlider *brightnessSlider = new QSlider(Qt::Horizontal);
     brightnessSlider->setRange(-100, 100);
     brightnessSlider->setValue(0);
@@ -103,6 +108,9 @@ int main(int argc, char *argv[])
     brightnessSlider->setVisible(false);
     rightLayout->addWidget(sliderLabel);
     rightLayout->addWidget(brightnessSlider);
+
+
+
     //contrast slider
     QLabel *sliderLabel_c = new QLabel("Contrast:");
     QSlider *ConstrastSlider = new QSlider(Qt::Horizontal);
@@ -113,14 +121,49 @@ int main(int argc, char *argv[])
     rightLayout->addWidget(sliderLabel_c);
     rightLayout->addWidget(ConstrastSlider);
 
+
+
+    //BLUR NODE RADIUS
+    QLabel *sliderLabel_br = new QLabel("BLUR RADIUS:");
+    QSlider *RadiusSlider = new QSlider(Qt::Horizontal);
+    QLabel *blurModeLabel = new QLabel("Blur Mode:");
+    QCheckBox *Uniform= new QCheckBox("Gaussian Uniform");
+    QCheckBox *Horizontal = new QCheckBox("Horizontal Directional");
+    QCheckBox *Vertical = new QCheckBox("Vertical Directional");
+    RadiusSlider->setRange(1, 20);
+    RadiusSlider->setValue(1);
+    // Initially hidden
+    blurModeLabel->setVisible(false);
+    Uniform->setVisible(false);
+    Horizontal->setVisible(false);
+    Vertical->setVisible(false);
+    sliderLabel_br->setVisible(false);
+    RadiusSlider->setVisible(false);
+     // Add to the right sidebar layout
+    rightLayout->addWidget(blurModeLabel);
+    rightLayout->addWidget(Uniform);
+    rightLayout->addWidget(Horizontal);
+    rightLayout->addWidget(Vertical);
+    rightLayout->addWidget(sliderLabel_br);
+    rightLayout->addWidget(RadiusSlider);
+
+    //create exclusive checkbox
+    QButtonGroup *blurModeGroup = new QButtonGroup();
+    blurModeGroup->setExclusive(true);  // ensures only one checkbox can be selected at a time
+
+    blurModeGroup->addButton(Uniform, 0);
+    blurModeGroup->addButton(Horizontal, 1);
+    blurModeGroup->addButton(Vertical, 2);
+
+
+
     // === Layout for Central Area ===
     QWidget *centralWidget = new QWidget();
     QHBoxLayout *mainLayout = new QHBoxLayout();
-    mainLayout->setContentsMargins(0, 0, 0, 0); // Optional: remove margins
-
+    mainLayout->setContentsMargins(0, 0, 0, 0);
 
     mainLayout->addWidget(leftSidebar);
-    mainLayout->addWidget(view); // Node Editor in center
+    mainLayout->addWidget(view);
     mainLayout->addWidget(rightSidebar);
     centralWidget->setLayout(mainLayout);
 
@@ -145,12 +188,14 @@ int main(int argc, char *argv[])
 
     QObject::connect(exitAction, &QAction::triggered, &app, &QApplication::quit);
 
+
+
+
    //brightness/contrast Node on click
     QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
                      [&](QtNodes::NodeId const &nodeId) {
                          auto &graphModel = scene.graphModel();
 
-                         // Use the delegateModel<T>() template method
                          auto brightnessNode = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<BrightnessNode>(nodeId);
 
                          if (brightnessNode) {
@@ -160,8 +205,7 @@ int main(int argc, char *argv[])
                              ConstrastSlider->setVisible(true);
 
 
-                             // Optional: uncomment if getBrightnessLevel() exists
-                             // brightnessSlider->setValue(static_cast<int>(brightnessNode->getBrightnessLevel()));
+
 
                              QObject::disconnect(brightnessSlider, nullptr, nullptr, nullptr);
                              QObject::disconnect(ConstrastSlider, nullptr, nullptr, nullptr);
@@ -181,6 +225,62 @@ int main(int argc, char *argv[])
                              ConstrastSlider->setVisible(false);
                          }
                      });
+
+
+
+
+    //BLUR NODE on click
+    QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
+                     [&](QtNodes::NodeId const &nodeId) {
+                         auto &graphModel = scene.graphModel();
+
+                         auto blurNode = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<BlurNode>(nodeId);
+
+                         if (blurNode) {
+                             sliderLabel_br->setVisible(true);
+                             RadiusSlider->setVisible(true);
+                             blurModeLabel->setVisible(true);
+                             Uniform->setVisible(true);
+                             Horizontal->setVisible(true);
+                             Vertical->setVisible(true);
+
+
+
+
+
+                             QObject::disconnect(RadiusSlider, nullptr, nullptr, nullptr);
+
+
+                             QObject::connect(RadiusSlider, &QSlider::valueChanged,
+                                              [=](int value) {
+                                                  blurNode->setRadiusLevel(value);
+                                              });
+                               QObject::disconnect(blurModeGroup, nullptr, nullptr, nullptr);
+                             QObject::connect(blurModeGroup, &QButtonGroup::idClicked, [=](int id) {
+                                 switch (id) {
+                                 case 0:
+                                     blurNode->setBlurMode("uniform");
+                                     break;
+                                 case 1:
+                                     blurNode->setBlurMode("horizontal");
+                                     break;
+                                 case 2:
+                                     blurNode->setBlurMode("vertical");
+                                     break;
+                                 }
+                             });
+
+                         } else {
+                             sliderLabel_br->setVisible(false);
+                             RadiusSlider->setVisible(false);
+                             blurModeLabel->setVisible(false);
+                             Uniform->setVisible(false);
+                             Horizontal->setVisible(false);
+                             Vertical->setVisible(false);
+
+                         }
+                     });
+
 
 
     // Center window on screen

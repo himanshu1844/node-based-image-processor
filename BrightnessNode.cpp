@@ -1,9 +1,9 @@
 #include "BrightnessNode.h"
 #include "PixmapData.h"
 #include <QtNodes/NodeDelegateModelRegistry>
-// #include <opencv2/opencv.hpp>
-// #include <opencv2/core.hpp>
-// #include <opencv2/imgproc.hpp>
+#include <opencv2/opencv.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/imgproc.hpp>
 
 #include <QtCore/QDir>
 #include <QtCore/QEvent>
@@ -75,39 +75,39 @@ void BrightnessNode::setInData(std::shared_ptr<NodeData> nodeData, PortIndex con
 {
     _nodeData = nodeData;
 
-    // if (_nodeData) {
-    //     auto d = std::dynamic_pointer_cast<PixmapData>(_nodeData);
-
-    //     // Convert QPixmap to OpenCV Mat
-    //     QImage img = d->pixmap().toImage().convertToFormat(QImage::Format_RGB888);
-    //     cv::Mat mat(img.height(), img.width(), CV_8UC3, const_cast<uchar*>(img.bits()), img.bytesPerLine());
-
-    //     // Adjust brightness
-    //     cv::Mat brightMat;
-    //     mat.convertTo(brightMat, -1, 1, _brightnessValue);  // alpha = 1, beta = brightness
-
-    //     // Convert back to QPixmap
-    //     QImage brightImage(brightMat.data, brightMat.cols, brightMat.rows, brightMat.step, QImage::Format_RGB888);
-    //     QPixmap brightPixmap = QPixmap::fromImage(brightImage.rgbSwapped());
-
-    //     _label->setPixmap(brightPixmap.scaled(_label->width(), _label->height(), Qt::KeepAspectRatio));
-
-
-    //     // Save new data
-    //     _nodeData = std::make_shared<PixmapData>(brightPixmap);
-    // } else {
-    //     _label->setPixmap(QPixmap());
-    // }
     if (_nodeData) {
         auto d = std::dynamic_pointer_cast<PixmapData>(_nodeData);
 
-        int w = _label->width();
-        int h = _label->height();
+        // Convert QPixmap to OpenCV Mat
+        QImage img = d->pixmap().toImage().convertToFormat(QImage::Format_RGB888);
+        cv::Mat mat(img.height(), img.width(), CV_8UC3, const_cast<uchar*>(img.bits()), img.bytesPerLine());
 
-        _label->setPixmap(d->pixmap().scaled(w, h, Qt::KeepAspectRatio));
+        // Adjust brightness
+        cv::Mat brightMat;
+        mat.convertTo(brightMat, -1, 1, _brightnessValue);  // alpha = 1, beta = brightness
+
+        // Convert back to QPixmap
+        QImage brightImage(brightMat.data, brightMat.cols, brightMat.rows, brightMat.step, QImage::Format_RGB888);
+        QPixmap brightPixmap = QPixmap::fromImage(brightImage.rgbSwapped());
+
+        _label->setPixmap(brightPixmap.scaled(_label->width(), _label->height(), Qt::KeepAspectRatio));
+
+
+        // Save new data
+        _nodeData = std::make_shared<PixmapData>(brightPixmap);
     } else {
         _label->setPixmap(QPixmap());
     }
+    // if (_nodeData) {
+    //     auto d = std::dynamic_pointer_cast<PixmapData>(_nodeData);
+
+    //     int w = _label->width();
+    //     int h = _label->height();
+
+    //     _label->setPixmap(d->pixmap().scaled(w, h, Qt::KeepAspectRatio));
+    // } else {
+    //     _label->setPixmap(QPixmap());
+    // }
 
     Q_EMIT dataUpdated(0);
 

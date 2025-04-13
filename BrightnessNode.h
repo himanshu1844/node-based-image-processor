@@ -5,8 +5,9 @@
 #include <QVBoxLayout>
 #include <QtCore/QObject>
 #include <QtWidgets/QLabel>
-// #include <opencv2/core.hpp>
-// #include <opencv2/imgproc.hpp>
+
+#include <opencv2/core.hpp>
+#include <opencv2/imgproc.hpp>
 #include <QtNodes/NodeDelegateModel>
 #include <QtNodes/NodeDelegateModelRegistry>
 
