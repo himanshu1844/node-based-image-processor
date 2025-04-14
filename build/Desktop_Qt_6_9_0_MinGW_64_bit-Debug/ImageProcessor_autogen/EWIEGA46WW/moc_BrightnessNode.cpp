@@ -39,10 +39,22 @@ template <> constexpr inline auto BrightnessNode::qt_create_metaobjectdata<qt_me
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "BrightnessNode"
+        "BrightnessNode",
+        "setContrastLevel",
+        "",
+        "value",
+        "setBrightnessLevel"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Slot 'setContrastLevel'
+        QtMocHelpers::SlotData<void(double)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Double, 3 },
+        }}),
+        // Slot 'setBrightnessLevel'
+        QtMocHelpers::SlotData<void(int)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 3 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -64,10 +76,13 @@ Q_CONSTINIT const QMetaObject BrightnessNode::staticMetaObject = { {
 void BrightnessNode::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     auto *_t = static_cast<BrightnessNode *>(_o);
-    (void)_t;
-    (void)_c;
-    (void)_id;
-    (void)_a;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: _t->setContrastLevel((*reinterpret_cast< std::add_pointer_t<double>>(_a[1]))); break;
+        case 1: _t->setBrightnessLevel((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObject *BrightnessNode::metaObject() const
@@ -86,6 +101,18 @@ void *BrightnessNode::qt_metacast(const char *_clname)
 int BrightnessNode::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = NodeDelegateModel::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 2;
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 2)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 2;
+    }
     return _id;
 }
 QT_WARNING_POP

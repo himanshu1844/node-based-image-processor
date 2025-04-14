@@ -4,60 +4,47 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
-
 #include <QtCore/QDir>
 #include <QtCore/QEvent>
 #include <QtWidgets/QFileDialog>
 
 BrightnessNode::BrightnessNode()
-    : _label(new QLabel("Image will appear here"))
+    : _label(new QLabel("Adjust brightness and contrast"))
+    , _brightnessValue(0)    // Default brightness: 0 (no change)
+    , _contrastValue(1.0)    // Default contrast: 1.0 (no change)
+    , _originalData(nullptr)
+    , _processedData(nullptr)
 {
     _label->setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
-
     QFont f = _label->font();
     f.setBold(true);
     f.setItalic(true);
-
     _label->setFont(f);
-
     _label->setMinimumSize(200, 200);
-
     _label->installEventFilter(this);
 }
 
 unsigned int BrightnessNode::nPorts(PortType portType) const
 {
     unsigned int result = 1;
-
     switch (portType) {
     case PortType::In:
         result = 1;
         break;
-
     case PortType::Out:
         result = 1;
-
+        break;
     default:
         break;
     }
-
     return result;
 }
 
 bool BrightnessNode::eventFilter(QObject *object, QEvent *event)
 {
-    if (object == _label) {
-        int w = _label->width();
-        int h = _label->height();
-
-        if (event->type() == QEvent::Resize) {
-            auto d = std::dynamic_pointer_cast<PixmapData>(_nodeData);
-            if (d) {
-                _label->setPixmap(d->pixmap().scaled(w, h, Qt::KeepAspectRatio));
-            }
-        }
+    if (object == _label && event->type() == QEvent::Resize) {
+        updateDisplay();
     }
-
     return false;
 }
 
@@ -68,67 +55,105 @@ NodeDataType BrightnessNode::dataType(PortType const, PortIndex const) const
 
 std::shared_ptr<NodeData> BrightnessNode::outData(PortIndex)
 {
-    return _nodeData;
+    return _processedData;
 }
 
 void BrightnessNode::setInData(std::shared_ptr<NodeData> nodeData, PortIndex const)
 {
-    _nodeData = nodeData;
+    // Store the original input data
+    _originalData = nodeData;
 
-    if (_nodeData) {
-        auto d = std::dynamic_pointer_cast<PixmapData>(_nodeData);
+    // Process the image with current brightness and contrast values
+    processImage();
 
-        // Convert QPixmap to OpenCV Mat
-        QImage img = d->pixmap().toImage().convertToFormat(QImage::Format_RGB888);
-        cv::Mat mat(img.height(), img.width(), CV_8UC3, const_cast<uchar*>(img.bits()), img.bytesPerLine());
+    // Update the display
+    updateDisplay();
 
-        // Adjust brightness
-        cv::Mat brightMat;
-        mat.convertTo(brightMat, -1, 1, _brightnessValue);  // alpha = 1, beta = brightness
-
-        // Convert back to QPixmap
-        QImage brightImage(brightMat.data, brightMat.cols, brightMat.rows, brightMat.step, QImage::Format_RGB888);
-        QPixmap brightPixmap = QPixmap::fromImage(brightImage.rgbSwapped());
-
-        _label->setPixmap(brightPixmap.scaled(_label->width(), _label->height(), Qt::KeepAspectRatio));
-
-
-        // Save new data
-        _nodeData = std::make_shared<PixmapData>(brightPixmap);
-    } else {
-        _label->setPixmap(QPixmap());
-    }
-    // if (_nodeData) {
-    //     auto d = std::dynamic_pointer_cast<PixmapData>(_nodeData);
-
-    //     int w = _label->width();
-    //     int h = _label->height();
-
-    //     _label->setPixmap(d->pixmap().scaled(w, h, Qt::KeepAspectRatio));
-    // } else {
-    //     _label->setPixmap(QPixmap());
-    // }
-
+    // Notify that output data has changed
     Q_EMIT dataUpdated(0);
-
 }
 
-    void BrightnessNode::setConstrastLevel(int value) {
-    _contrastvalue = value;
-    if (_label)
+void BrightnessNode::setContrastLevel(double value)
+{
+    // Set the new contrast value
+    _contrastValue = value;
 
-    {
-        _label->setText(QString("Brightness: %1").arg(value));
-    }
-    setInData(_nodeData, 0);
+    // Reprocess the original image with the new values
+    processImage();
+
+    // Update the display
+    updateDisplay();
+
+    // Notify that output data has changed
+    Q_EMIT dataUpdated(0);
 }
 
-void BrightnessNode::setBrightnessLevel(int value) {
+void BrightnessNode::setBrightnessLevel(int value)
+{
+    // Set the new brightness value
     _brightnessValue = value;
-    if (_label)
-    {
-        _label->setText(QString("Brightness: %1").arg(value));
-    }
-    setInData(_nodeData, 0);
+
+    // Reprocess the original image with the new values
+    processImage();
+
+    // Update the display
+    updateDisplay();
+
+    // Notify that output data has changed
+    Q_EMIT dataUpdated(0);
 }
 
+void BrightnessNode::processImage()
+{
+    if (!_originalData)
+        return;
+
+    auto inputData = std::dynamic_pointer_cast<PixmapData>(_originalData);
+    if (!inputData)
+        return;
+
+    // Get the input pixmap
+    QPixmap inputPixmap = inputData->pixmap();
+    if (inputPixmap.isNull())
+        return;
+
+    // Convert QPixmap to QImage and then to cv::Mat only once
+    QImage img = inputPixmap.toImage().convertToFormat(QImage::Format_RGB888);
+    cv::Mat mat(img.height(), img.width(), CV_8UC3, const_cast<uchar*>(img.bits()), img.bytesPerLine());
+
+    // Clone to avoid modifying original memory
+    cv::Mat matCopy = mat.clone();
+
+    // Convert from BGR to RGB (OpenCV default is BGR)
+    cv::cvtColor(matCopy, matCopy, cv::COLOR_RGB2BGR);
+
+    // Apply brightness and contrast
+    cv::Mat result;
+    matCopy.convertTo(result, -1, _contrastValue, _brightnessValue);
+
+    // Convert back to RGB for Qt
+    cv::cvtColor(result, result, cv::COLOR_BGR2RGB);
+
+    // Create a new QImage from the processed Mat
+    QImage processedImage(result.data, result.cols, result.rows, result.step, QImage::Format_RGB888);
+
+    // Create a QPixmap from the QImage
+    QPixmap processedPixmap = QPixmap::fromImage(processedImage.copy());
+
+    // Update the output data
+    _processedData = std::make_shared<PixmapData>(processedPixmap);
+}
+
+void BrightnessNode::updateDisplay()
+{
+    if (_processedData) {
+        auto pixmap = std::dynamic_pointer_cast<PixmapData>(_processedData)->pixmap();
+        if (!pixmap.isNull()) {
+            _label->setPixmap(pixmap.scaled(_label->width(), _label->height(), Qt::KeepAspectRatio));
+            _label->setText(QString("Brightness: %1, Contrast: %2").arg(_brightnessValue).arg(_contrastValue));
+        }
+    } else if (_label) {
+        _label->setPixmap(QPixmap());
+        _label->setText("No image data");
+    }
+}

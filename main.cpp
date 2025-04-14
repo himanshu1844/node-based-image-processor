@@ -789,7 +789,7 @@ int main(int argc, char *argv[])
                                               });
                              QObject::connect(ConstrastSlider, &QSlider::valueChanged,
                                               [=](int value) {
-                                                  brightnessNode->setConstrastLevel(static_cast<float>(value));
+                                                  brightnessNode->setContrastLevel(static_cast<float>(value));
                                               });
                          } else {
                              sliderLabel->setVisible(false);

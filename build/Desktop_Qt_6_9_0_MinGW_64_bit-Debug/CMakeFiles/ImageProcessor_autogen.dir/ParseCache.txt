@@ -877,7 +877,6 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/QMetaObject
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/QString
- mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/QtGlobal
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q20iterator.h
@@ -1048,18 +1047,10 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLabel
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/QSlider
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/QVBoxLayout
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractslider.h
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qboxlayout.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qgridlayout.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlabel.h
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlayout.h
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlayoutitem.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qsizepolicy.h
- mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qslider.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgets-config.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgetsexports.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h
@@ -1138,7 +1129,6 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_mutex.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algobase.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h
@@ -1167,7 +1157,6 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_ptr.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h
@@ -1178,14 +1167,12 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cctype
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cfloat
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/climits
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/clocale
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/codecvt
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/complex
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdio
@@ -1210,7 +1197,6 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits
@@ -1218,7 +1204,6 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/memory
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional
@@ -1269,17 +1254,12 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/emmintrin.h
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/float.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/limits.h
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdarg.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
- mdp:C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_mac.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_off_t.h
@@ -1316,47 +1296,16 @@ C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/base.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/bufferpool.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/check.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cv_cpu_dispatch.h
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cvdef.h
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cvstd.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cvstd.inl.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/cvstd_wrapper.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/fast_math.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/hal/interface.h
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/mat.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/mat.inl.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/matx.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/neon_utils.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/operations.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/optim.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/ovx.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/persistence.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/saturate.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/traits.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/types.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/utility.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/version.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/core/vsx_utils.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/imgproc.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/imgproc/segmentation.hpp
- mdp:C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include/opencv2/opencv_modules.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/BrightnessNode.h
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/moc_predefs.h
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/NodeDelegateModel
- mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/NodeDelegateModelRegistry
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Compiler.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Definitions.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Export.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeData.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeDelegateModel.hpp
- mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeDelegateModelRegistry.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeStyle.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/OperatingSystem.hpp
- mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/QStringStdHash.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Serializable.hpp
  mdp:C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Style.hpp
 C:/Users/Himanshu Pancholi/ImageProcessor/ImageLoaderModel.h
