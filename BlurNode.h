@@ -42,20 +42,28 @@ public:
 
     void setInData(std::shared_ptr<NodeData> nodeData, PortIndex const port) override;
 
-    QWidget *embeddedWidget() override { return _label; }
+    QWidget *embeddedWidget() override { return  _containerWidget; }
 
     void setRadiusLevel(int value);
     void setBlurMode(const std::string &mode);
+     QWidget *containerWidget() { return _containerWidget; }
     bool resizable() const override { return true; }
 
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
 
 private:
+    void updateKernelPreview();
     QLabel *_label;
-    int _radius;
-    std::string _mode;
+
     void processImage();
     std::shared_ptr<NodeData> _nodeData;
     std::shared_ptr<NodeData> _originalData;
+    QWidget* _containerWidget = new QWidget();
+
+    QLabel* _kernelPreviewLabel = nullptr;
+
+
+    int _radius = 5;
+    std::string _mode = "uniform";
 };
