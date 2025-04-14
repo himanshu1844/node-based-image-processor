@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 
     // === Create Main Window ===
     QMainWindow mainWindow;
-    mainWindow.setWindowTitle("Data Flow: Resizable Images");
+    mainWindow.setWindowTitle("Image Processor");
     // mainWindow.showMaximized();
 
 
@@ -91,12 +91,12 @@ int main(int argc, char *argv[])
     QVBoxLayout *leftLayout = new QVBoxLayout();
     leftLayout->addWidget(new QLabel("Tools"));
 
-    QToolButton* loadImageBtn = new QToolButton();
-    loadImageBtn->setText("LoadImageBtn");
-    loadImageBtn->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    loadImageBtn->setIconSize(QSize(48, 48)); // Set your desired size
-    loadImageBtn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
-    leftLayout->addWidget(loadImageBtn);
+    QToolButton* Brightness = new QToolButton();
+    Brightness->setText("Brightness");
+    Brightness->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    Brightness->setIconSize(QSize(48, 48)); // Set your desired size
+    Brightness->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    leftLayout->addWidget(Brightness);
 
     QToolButton* loadImageBtn1 = new QToolButton();
     loadImageBtn1->setText("Other");
@@ -116,11 +116,10 @@ int main(int argc, char *argv[])
 
     // rightSidebar->setStyleSheet("background-color: black;");
     QVBoxLayout *rightLayout = new QVBoxLayout();
-    rightLayout->addWidget(new QLabel("Properties"));
-    rightLayout->addWidget(new QPushButton("Export"));
-    rightLayout->addWidget(new QPushButton("Settings"));
-    rightLayout->addStretch();
+
+    // rightLayout->addStretch();
     rightSidebar->setLayout(rightLayout);
+
 
 
 
@@ -686,7 +685,42 @@ int main(int argc, char *argv[])
                              // saveButton->setVisible(false);
                          }
                      });
+    //save button
 
+    //on click
+    auto imageShowModel = std::make_unique<ImageShowModel>();
+
+    // Create save button and add to layout
+    QPushButton *saveButton = new QPushButton("Save Image");
+    saveButton->setVisible(false);
+    rightLayout->addWidget(saveButton);
+
+    ImageShowModel* currentImageShowModel = nullptr;
+
+    // Connect the save button click to the ImageShowModel's saveImage slot
+    QObject::connect(&scene, &DataFlowGraphicsScene::nodeClicked,
+                     [&](QtNodes::NodeId const &nodeId) {
+                         auto &graphModel = scene.graphModel();
+
+                         auto imageshow = dynamic_cast<DataFlowGraphModel&>(graphModel).delegateModel<ImageShowModel>(nodeId);
+
+                         if (imageshow) {
+                             currentImageShowModel = imageshow;
+                             saveButton->setVisible(true);
+                         } else {
+                             currentImageShowModel = nullptr;
+                             saveButton->setVisible(false);
+                         }
+                     });
+    QObject::connect(saveButton, &QPushButton::clicked, [&]() {
+        if (currentImageShowModel) {
+            currentImageShowModel->saveImage();  // This must be a public slot
+        }
+    });
+
+
+
+     rightLayout->addStretch();
 
 
 

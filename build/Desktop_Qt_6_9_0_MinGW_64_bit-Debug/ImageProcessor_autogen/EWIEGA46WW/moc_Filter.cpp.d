@@ -7,7 +7,6 @@ C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-D
   C:/Qt/6.9.0/mingw_64/include/QtCore/QMetaObject \
   C:/Qt/6.9.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.9.0/mingw_64/include/QtCore/QString \
-  C:/Qt/6.9.0/mingw_64/include/QtCore/QtGlobal \
   C:/Qt/6.9.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/mingw_64/include/QtCore/q20iterator.h \
@@ -328,7 +327,6 @@ C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-D
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
-  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
@@ -429,15 +427,12 @@ C:/Users/Himanshu\ Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-D
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/NodeDelegateModel \
-  C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/NodeDelegateModelRegistry \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Compiler.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Definitions.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Export.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeData.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeDelegateModel.hpp \
-  C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeDelegateModelRegistry.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/NodeStyle.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/OperatingSystem.hpp \
-  C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/QStringStdHash.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Serializable.hpp \
   C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/internal/Style.hpp

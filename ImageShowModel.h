@@ -44,12 +44,14 @@ public:
     QWidget *embeddedWidget() override { return _label; }
 
     bool resizable() const override { return true; }
-
+     void saveImage();
+ QPixmap getCurrentImage() const;
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
 
 private:
     QLabel *_label;
+    QPixmap _currentImage;
 
     std::shared_ptr<NodeData> _nodeData;
 };
