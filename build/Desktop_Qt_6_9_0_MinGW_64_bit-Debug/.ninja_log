@@ -2,7 +2,7 @@
 928	1778	7660750462381471	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_NodeGraphicsObject.cpp	3ae4b0e07c5ec76a
 240	1141	7660750455953825	nodeeditor/include/QtNodes/internal/moc_DataFlowGraphModel.cpp	b5a11859bdb716b3
 558	963	7660750454110827	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/include/QtNodes/internal/moc_Definitions.cpp	68075130eff8bd70
-6285	7907	7663952582622087	ImageProcessor.exe	e8e08fe9a5c2cf08
+11935	15757	7663978827338599	ImageProcessor.exe	91e344f051115d63
 6	146	7660750445875457	nodeeditor/QtNodes_autogen/timestamp	f91b0175f44f812a
 6	146	7660750445875457	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/nodeeditor/QtNodes_autogen/timestamp	f91b0175f44f812a
 853	1339	7660750457986270	nodeeditor/include/QtNodes/internal/moc_NodeData.cpp	1c489d3838c3b5e
@@ -144,26 +144,19 @@
 14813	19346	7660750593018574	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_NodeDelegateModel.cpp.obj	7298307286d0f2ec
 7995	20013	7660750524835433	nodeeditor/CMakeFiles/QtNodes.dir/src/NodeGraphicsObject.cpp.obj	3b8a205e58cfb991
 20013	21821	7660750662966539	lib/libQtNodes.dll.a	88aaf89fa004dd28
-69	345	7663952520461625	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-69	345	7663952520461625	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+70	608	7663978712144768	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+70	608	7663978712144768	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
 699	9693	7663860939137207	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
-69	345	7663952520461625	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-69	345	7663952520461625	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-1412	6586	7663238510356097	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
+70	608	7663978712144768	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+70	608	7663978712144768	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+610	11935	7663978714076885	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
 1190	5623	7661906583852531	CMakeFiles/ImageProcessor.dir/mainwindow.cpp.obj	868617e5975127b4
 1234	4674	7663150047186060	CMakeFiles/ImageProcessor.dir/ImageShowModel.cpp.obj	452f8e0da6f4a61c
 1198	6709	7661906583931451	CMakeFiles/ImageProcessor.dir/ImageLoaderModel.cpp.obj	c72a685d6670d8cd
 347	6285	7663952523238772	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
 1354	6484	7663174237118466	CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj	6de6c7e5a8302b2
-32	1014	7663978705001971	build.ninja	e98b7a46e6506bd5
+53	1998	7664003829267534	build.ninja	e98b7a46e6506bd5
 263	3402	7662409809500253	CMakeFiles/ImageProcessor.dir/edge.cpp.obj	973b42e74e78d504
 728	13242	7663848021399551	CMakeFiles/ImageProcessor.dir/Blend.cpp.obj	22901c4ae10f6bc6
 848	15167	7663858255096161	CMakeFiles/ImageProcessor.dir/Noise.cpp.obj	32648e26cee56e1b
 706	15197	7663035876463940	CMakeFiles/ImageProcessor.dir/Filter.cpp.obj	c7c7e28c330032e
-53	1998	7663978705001971	build.ninja	e98b7a46e6506bd5
-70	608	7663978712144768	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-70	608	7663978712144768	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-70	608	7663978712144768	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-70	608	7663978712144768	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-610	11935	7663978714076885	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
-11935	15757	7663978827338599	ImageProcessor.exe	91e344f051115d63

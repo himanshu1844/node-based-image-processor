@@ -50,6 +50,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Filter.h
         Filter.cpp
         readme.md
+        .gitignore
     )
 else()
     if(ANDROID)
