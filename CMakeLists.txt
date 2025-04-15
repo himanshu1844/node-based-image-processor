@@ -5,7 +5,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(OpenCV_DIR "C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64")
+set(OpenCV_DIR "${CMAKE_CURRENT_SOURCE_DIR}/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64")
 
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)

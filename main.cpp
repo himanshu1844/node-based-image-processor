@@ -281,7 +281,7 @@ int main(int argc, char *argv[])
 
     QToolButton* filter_n = new QToolButton();
     filter_n->setText("Filter");
-    filter_n->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/filter.png"));
+    filter_n->setIcon(QIcon(":/icons/filter.png"));
     filter_n->setIconSize(QSize(42, 42)); // Set your desired size
     filter_n->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     filter_n->setFixedSize(70, 70);

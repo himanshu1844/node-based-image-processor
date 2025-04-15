@@ -323,13 +323,13 @@
 		"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
-		"C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCVConfig-version.cmake",
-		"C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCVConfig.cmake",
-		"C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVConfig.cmake",
+		"C:/Users/Himanshu Pancholi/ImageProcessor/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCVConfig-version.cmake",
+		"C:/Users/Himanshu Pancholi/ImageProcessor/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCVConfig.cmake",
+		"C:/Users/Himanshu Pancholi/ImageProcessor/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVConfig.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
-		"C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules.cmake",
-		"C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules-release.cmake",
+		"C:/Users/Himanshu Pancholi/ImageProcessor/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules.cmake",
+		"C:/Users/Himanshu Pancholi/ImageProcessor/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/x64/mingw/lib/OpenCVModules-release.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/Himanshu Pancholi/ImageProcessor",
@@ -434,7 +434,7 @@
 	"MOC_INCLUDES" : 
 	[
 		"C:/Users/Himanshu Pancholi/ImageProcessor/nodeeditor/include",
-		"C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include",
+		"C:/Users/Himanshu Pancholi/ImageProcessor/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/include",
 		"C:/Qt/6.9.0/mingw_64/include/QtCore",
 		"C:/Qt/6.9.0/mingw_64/include",
 		"C:/Qt/6.9.0/mingw_64/mkspecs/win32-g++",

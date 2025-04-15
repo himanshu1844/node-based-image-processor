@@ -144,23 +144,54 @@
 14813	19346	7660750593018574	nodeeditor/CMakeFiles/QtNodes.dir/include/QtNodes/internal/moc_NodeDelegateModel.cpp.obj	7298307286d0f2ec
 7995	20013	7660750524835433	nodeeditor/CMakeFiles/QtNodes.dir/src/NodeGraphicsObject.cpp.obj	3b8a205e58cfb991
 20013	21821	7660750662966539	lib/libQtNodes.dll.a	88aaf89fa004dd28
-70	608	7663978712144768	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-70	608	7663978712144768	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+89	663	7664004515529181	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+89	663	7664004515529181	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
 699	9693	7663860939137207	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	75bdaa075a02465d
-70	608	7663978712144768	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-70	608	7663978712144768	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+89	663	7664004515529181	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+89	663	7664004515529181	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
 610	11935	7663978714076885	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	61bc0e1bc5cdf853
 1190	5623	7661906583852531	CMakeFiles/ImageProcessor.dir/mainwindow.cpp.obj	868617e5975127b4
 1234	4674	7663150047186060	CMakeFiles/ImageProcessor.dir/ImageShowModel.cpp.obj	452f8e0da6f4a61c
 1198	6709	7661906583931451	CMakeFiles/ImageProcessor.dir/ImageLoaderModel.cpp.obj	c72a685d6670d8cd
 347	6285	7663952523238772	CMakeFiles/ImageProcessor.dir/main.cpp.obj	85e76e5105a80de6
 1354	6484	7663174237118466	CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj	6de6c7e5a8302b2
-53	1998	7664003829267534	build.ninja	e98b7a46e6506bd5
+53	1998	7664037719774911	build.ninja	e98b7a46e6506bd5
 263	3402	7662409809500253	CMakeFiles/ImageProcessor.dir/edge.cpp.obj	973b42e74e78d504
 728	13242	7663848021399551	CMakeFiles/ImageProcessor.dir/Blend.cpp.obj	22901c4ae10f6bc6
 848	15167	7663858255096161	CMakeFiles/ImageProcessor.dir/Noise.cpp.obj	32648e26cee56e1b
 706	15197	7663035876463940	CMakeFiles/ImageProcessor.dir/Filter.cpp.obj	c7c7e28c330032e
-89	663	7664004515529181	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-89	663	7664004515529181	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
-89	663	7664004515529181	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
-89	663	7664004515529181	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+90	2969	7664037817392772	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+90	2969	7664037817392772	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+90	2969	7664037817392772	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+90	2969	7664037817392772	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+3002	12707	7664037819925987	CMakeFiles/ImageProcessor.dir/ImageLoaderModel.cpp.obj	a75fbf7a025a8039
+2993	12760	7664037819810218	CMakeFiles/ImageProcessor.dir/ImageShowModel.cpp.obj	f52c2e78f9d665cc
+3024	13180	7664037820143570	CMakeFiles/ImageProcessor.dir/Splitter.cpp.obj	93b8cb26f337c563
+3035	14113	7664037820251070	CMakeFiles/ImageProcessor.dir/BlurNode.cpp.obj	7aac80e831bd698e
+3048	14322	7664037820367052	CMakeFiles/ImageProcessor.dir/Threshold.cpp.obj	8fd4a64542c02f0
+2974	16625	7664037819630848	CMakeFiles/ImageProcessor.dir/ImageProcessor_autogen/mocs_compilation.cpp.obj	5485b281bd753683
+3060	17015	7664037820489942	CMakeFiles/ImageProcessor.dir/edge.cpp.obj	683660fd102c3494
+3090	17065	7664037820794403	CMakeFiles/ImageProcessor.dir/Filter.cpp.obj	ec37c2da27de463e
+3013	17277	7664037819983152	CMakeFiles/ImageProcessor.dir/BrightnessNode.cpp.obj	ee7bd1ad20c540b5
+3071	17467	7664037820611022	CMakeFiles/ImageProcessor.dir/Blend.cpp.obj	a61333cdab57c1c0
+3081	17470	7664037820712477	CMakeFiles/ImageProcessor.dir/Noise.cpp.obj	d2cbb0765dec9695
+2983	22874	7664037819732213	CMakeFiles/ImageProcessor.dir/main.cpp.obj	672f3f697133b482
+22874	27305	7664038018641524	ImageProcessor.exe	5f67af57ba9a1780
+93	715	7664038892496264	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+93	715	7664038892496264	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+93	715	7664038892496264	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+93	715	7664038892496264	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+717	21819	7664038898736597	CMakeFiles/ImageProcessor.dir/main.cpp.obj	672f3f697133b482
+21819	25582	7664039109765968	ImageProcessor.exe	5f67af57ba9a1780
+119	711	7664039505416163	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+119	711	7664039505416163	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+119	711	7664039505416163	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+119	711	7664039505416163	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+714	22567	7664039511428860	CMakeFiles/ImageProcessor.dir/main.cpp.obj	672f3f697133b482
+22568	26894	7664039729968784	ImageProcessor.exe	5f67af57ba9a1780
+89	706	7664040123178342	ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+89	706	7664040123178342	ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+89	706	7664040123178342	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/timestamp	5ee25a8b87a33eab
+89	706	7664040123178342	C:/Users/Himanshu Pancholi/ImageProcessor/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ImageProcessor_autogen/mocs_compilation.cpp	5ee25a8b87a33eab
+709	18081	7664040129404050	CMakeFiles/ImageProcessor.dir/main.cpp.obj	672f3f697133b482
+18081	22133	7664040303082241	ImageProcessor.exe	5f67af57ba9a1780
