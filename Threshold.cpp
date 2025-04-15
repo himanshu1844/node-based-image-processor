@@ -106,7 +106,7 @@ void ThresholdNode::applyThreshold()
         cv::adaptiveThreshold(_originalMat, result, 255,
                               cv::ADAPTIVE_THRESH_MEAN_C, cv::THRESH_BINARY, 11, 2);
     }
-    else if (_thresholdmethod == "otsu") {
+    else if (_thresholdmethod == "Otsu") {
         cv::Mat gray;
         if (_originalMat.channels() == 3) {
             cv::cvtColor(_originalMat, gray, cv::COLOR_BGR2GRAY);
@@ -137,5 +137,5 @@ void ThresholdNode::setthreshold(int value){
 void ThresholdNode::setthresholdmethod(const std::string &mode){
     _thresholdmethod = mode;
 
-   applyThreshold();
+    applyThreshold();
 }

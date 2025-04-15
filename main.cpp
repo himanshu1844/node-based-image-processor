@@ -91,21 +91,218 @@ int main(int argc, char *argv[])
     QVBoxLayout *leftLayout = new QVBoxLayout();
     leftLayout->addWidget(new QLabel("Tools"));
 
+    QToolButton* Imageloader = new QToolButton();
+    Imageloader->setText("Image Loader");
+    Imageloader->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    Imageloader->setIconSize(QSize(32, 32)); // Set your desired size
+    Imageloader->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    Imageloader->setFixedSize(70, 70);
+    leftLayout->addWidget(Imageloader);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(Imageloader, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("ImageLoaderModel");
+
+
+            // Set some properties for the node
+            dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+            dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+    QToolButton* imageshow = new QToolButton();
+    imageshow->setText("Image Show");
+    imageshow->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    imageshow->setIconSize(QSize(32, 32)); // Set your desired size
+    imageshow->setFixedSize(70, 70);
+    imageshow->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    leftLayout->addWidget(imageshow);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(imageshow, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("ImageShowModel");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
     QToolButton* Brightness = new QToolButton();
     Brightness->setText("Brightness");
     Brightness->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    Brightness->setIconSize(QSize(48, 48)); // Set your desired size
+    Brightness->setIconSize(QSize(32, 32)); // Set your desired size
     Brightness->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    Brightness->setFixedSize(70, 70);
     leftLayout->addWidget(Brightness);
 
-    QToolButton* loadImageBtn1 = new QToolButton();
-    loadImageBtn1->setText("Other");
-    loadImageBtn1->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    loadImageBtn1->setIconSize(QSize(48, 48));
-    loadImageBtn1->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
-    leftLayout->addWidget(loadImageBtn1);
 
-    // leftLayout->addWidget(new QPushButton("Clear"));
+    // Connect button click to add an Brightness node
+    QObject::connect(Brightness, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("BrightnessNode");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+    QToolButton* splitter = new QToolButton();
+    splitter->setText("Splitter");
+    splitter->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    splitter->setIconSize(QSize(32, 32)); // Set your desired size
+    splitter->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    splitter->setFixedSize(70, 70);
+    leftLayout->addWidget(splitter);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(splitter, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("Splitter");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+    QToolButton* blur = new QToolButton();
+    blur->setText("Blur");
+    blur->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    blur->setIconSize(QSize(32, 32)); // Set your desired size
+    blur->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    blur->setFixedSize(70, 70);
+    leftLayout->addWidget(blur);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(blur, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("BlurNode");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+    QToolButton* threshold = new QToolButton();
+    threshold->setText("Threshold");
+    threshold->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    threshold->setIconSize(QSize(32, 32)); // Set your desired size
+    threshold->setFixedSize(70, 70);
+    threshold->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    leftLayout->addWidget(threshold);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(threshold, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("ThresholdNode");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+    QToolButton* edge = new QToolButton();
+    edge->setText("Edge Detection");
+    edge->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    edge->setIconSize(QSize(32, 32)); // Set your desired size
+    edge->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    edge->setFixedSize(70, 70);
+    leftLayout->addWidget(edge);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(edge, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("Edge");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+    QToolButton* blend = new QToolButton();
+    blend->setText("Blend Mode");
+    blend->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    blend->setIconSize(QSize(32, 32)); // Set your desired size
+    blend->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    blend->setFixedSize(70, 70);
+    leftLayout->addWidget(blend);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(blend, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("Blend");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+    QToolButton* noise = new QToolButton();
+    noise->setText("Noise");
+   noise->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    noise->setIconSize(QSize(32, 32)); // Set your desired size
+    noise->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    noise->setFixedSize(70, 70);
+    leftLayout->addWidget(noise);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(noise, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("Noise");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+    QToolButton* filter_n = new QToolButton();
+    filter_n->setText("Filter");
+    filter_n->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
+    filter_n->setIconSize(QSize(32, 32)); // Set your desired size
+    filter_n->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
+    filter_n->setFixedSize(70, 70);
+    leftLayout->addWidget(filter_n);
+
+
+    // Connect button click to add an Brightness node
+    QObject::connect(filter_n, &QToolButton::clicked, [&dataFlowGraphModel]() {
+        // Create a node with the ImageShowModel type
+        QtNodes::NodeId nodeId = dataFlowGraphModel.addNode("FilterNode");
+
+
+        // Set some properties for the node
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Position, QPointF(100, 100));
+        dataFlowGraphModel.setNodeData(nodeId, QtNodes::NodeRole::Caption, QString("Image Viewer"));
+
+    });
+
+
+
+
     leftLayout->addStretch();
     leftSidebar->setLayout(leftLayout);
 
@@ -281,9 +478,9 @@ int main(int argc, char *argv[])
 
 
     opacityslider->setRange(0,100);
-    opacityslider->setValue(0);
+    opacityslider->setValue(50);
     mixslider->setRange(0,100);
-    mixslider->setValue(0);
+    mixslider->setValue(50);
     rightLayout->addWidget(Blendmethod);
     rightLayout->addWidget(Normal);
     rightLayout->addWidget(Multiply);

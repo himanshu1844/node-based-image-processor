@@ -358,6 +358,9 @@ Qt6Core_DIR:PATH=C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Core
 //The directory containing a CMake configuration file for Qt6EntryPointPrivate.
 Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6EntryPointPrivate
 
+//The directory containing a CMake configuration file for Qt6Graphs.
+Qt6Graphs_DIR:PATH=Qt6Graphs_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for Qt6GuiPrivate.
 Qt6GuiPrivate_DIR:PATH=C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6GuiPrivate
 

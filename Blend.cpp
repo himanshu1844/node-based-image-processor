@@ -11,9 +11,9 @@
 
 Blend::Blend()
     : _label(new QLabel("Image will appear here")),
-    _blendmode("normal"),
-    _opacity(100),
-    _mix(100),
+    _blendmode("Normal"),
+    _opacity(50),
+    _mix(50),
     _image1(nullptr),
     _image2(nullptr)
 {
@@ -98,7 +98,7 @@ void Blend::setInData(std::shared_ptr<NodeData> nodeData, PortIndex const portIn
         // If only the first image is available, pass it through
         _nodeData = _image1;
     } else if (_image2) {
-        // If only the second image is available, pass it through with opacity applied
+        // If only the second image is available, apply enhanced opacity
         auto img2 = std::dynamic_pointer_cast<PixmapData>(_image2);
         if (img2 && !img2->pixmap().isNull()) {
             try {
@@ -107,29 +107,33 @@ void Blend::setInData(std::shared_ptr<NodeData> nodeData, PortIndex const portIn
 
                 // Convert QImage to cv::Mat
                 cv::Mat mat(image.height(), image.width(), CV_8UC4, const_cast<uchar*>(image.constBits()), image.bytesPerLine());
+
+                // Convert to float for better precision
+                cv::Mat matf;
+                mat.convertTo(matf, CV_32FC4, 1.0/255.0);
+
+                // Split channels
+                std::vector<cv::Mat> channels(4);
+                cv::split(matf, channels);
+
+                // Apply enhanced opacity curve to alpha channel for more noticeable changes
+                double opacityFactor = pow(_opacity / 100.0, 0.8); // Make changes more dramatic
+                channels[3] = channels[3] * opacityFactor;
+
+                // Merge channels back
+                cv::Mat resultf;
+                cv::merge(channels, resultf);
+
+                // Convert back to 8-bit
                 cv::Mat result;
+                resultf.convertTo(result, CV_8UC4, 255.0);
 
-                // Check if the mat is valid
-                if (!mat.empty() && mat.channels() == 4) {
-                    // Apply opacity
-                    cv::Mat channels[4];
-                    cv::split(mat, channels);
+                // Convert back to QImage
+                QImage resultImage(result.data, result.cols, result.rows, result.step, QImage::Format_ARGB32);
+                resultImage = resultImage.copy(); // Deep copy to avoid OpenCV buffer issues
 
-                    // Adjust alpha channel for opacity
-                    channels[3] = channels[3] * (_opacity / 100.0);
-
-                    cv::merge(channels, 4, result);
-
-                    // Convert back to QImage
-                    QImage resultImage(result.data, result.cols, result.rows, result.step, QImage::Format_ARGB32);
-                    resultImage = resultImage.copy(); // Deep copy to avoid OpenCV buffer issues
-
-                    _nodeData = std::make_shared<PixmapData>(QPixmap::fromImage(resultImage));
-                } else {
-                    _nodeData = _image2;
-                }
+                _nodeData = std::make_shared<PixmapData>(QPixmap::fromImage(resultImage));
             } catch (const cv::Exception& e) {
-
                 qWarning("OpenCV error in setInData: %s", e.what());
                 _nodeData = _image2;
             }
@@ -158,7 +162,6 @@ void Blend::setInData(std::shared_ptr<NodeData> nodeData, PortIndex const portIn
 
     Q_EMIT dataUpdated(0);
 }
-
 
 cv::Mat Blend::qPixmapToCvMat(const QPixmap& pixmap)
 {
@@ -214,52 +217,48 @@ QPixmap Blend::blendImages(const QPixmap& img1, const QPixmap& img2)
         }
     }
 
-    // Apply the opacity to the second image
-    cv::Mat src2WithOpacity;
-    if (_opacity < 100) {
-        // Ensure we have 4 channels
-        if (src2.channels() == 4) {
-            cv::Mat channels[4];
-            cv::split(src2, channels);
-
-            // Scale the alpha channel
-            channels[3] = channels[3] * (_opacity / 100.0);
-
-            cv::merge(channels, 4, src2WithOpacity);
-        } else {
-            src2WithOpacity = src2; // Just use original if not 4 channels
-        }
-    } else {
-        src2WithOpacity = src2;
-    }
-
     // Initialize result matrix
-    cv::Mat result = src1.clone();
-
+    cv::Mat blendResult;
 
     try {
         if (_blendmode == "Normal") {
-            blendNormal(src1, src2WithOpacity, result);
+            blendNormal(src1, src2, blendResult);
         }
         else if (_blendmode == "Multiply") {
-            blendMultiply(src1, src2WithOpacity, result);
+            blendMultiply(src1, src2, blendResult);
         }
         else if (_blendmode == "Screen") {
-            blendScreen(src1, src2WithOpacity, result);
+            blendScreen(src1, src2, blendResult);
         }
         else if (_blendmode == "Overlay") {
-            blendOverlay(src1, src2WithOpacity, result);
+            blendOverlay(src1, src2, blendResult);
         }
         else if (_blendmode == "Difference") {
-            blendDifference(src1, src2WithOpacity, result);
+            blendDifference(src1, src2, blendResult);
         }
 
-        // Apply mix level if not 100%
-        if (_mix < 100 && !result.empty() && !src1.empty()) {
-            cv::Mat blended = result.clone();
-            double mixRatio = _mix / 100.0;
-            cv::addWeighted(src1, 1.0 - mixRatio, blended, mixRatio, 0.0, result);
+        // Apply mix level using enhanced curve for more noticeable effect
+        cv::Mat result;
+        if (_mix < 100 && !blendResult.empty() && !src1.empty()) {
+            // Use a curve to make mix changes more noticeable
+            // Square root curve makes small mix values have more impact
+            double mixRatio = sqrt(_mix / 100.0);
+
+            // Convert to float for better precision
+            cv::Mat src1f, blendResultf, resultf;
+            src1.convertTo(src1f, CV_32FC4, 1.0/255.0);
+            blendResult.convertTo(blendResultf, CV_32FC4, 1.0/255.0);
+
+            // Mix the original and blended images with enhanced curve
+            cv::addWeighted(src1f, 1.0 - mixRatio, blendResultf, mixRatio, 0.0, resultf);
+
+            // Convert back to 8-bit
+            resultf.convertTo(result, CV_8UC4, 255.0);
+        } else {
+            result = blendResult;
         }
+
+        return cvMatToQPixmap(result);
     }
     catch (const cv::Exception& e) {
         // Handle OpenCV exceptions
@@ -267,9 +266,6 @@ QPixmap Blend::blendImages(const QPixmap& img1, const QPixmap& img2)
         // Return original image on error
         return img1;
     }
-
-    // Convert back to QPixmap
-    return cvMatToQPixmap(result);
 }
 
 
@@ -283,36 +279,62 @@ void Blend::blendNormal(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
         return;
     }
 
+    // Convert images to CV_32F for better precision in calculations
+    cv::Mat src1f, src2f;
+    src1.convertTo(src1f, CV_32FC4, 1.0/255.0);
+    src2.convertTo(src2f, CV_32FC4, 1.0/255.0);
+
     // Split the images into channels (R, G, B, A)
-    cv::Mat src1Channels[4];
-    cv::Mat src2Channels[4];
-    cv::Mat dstChannels[4];
-    cv::split(src1, src1Channels);
-    cv::split(src2, src2Channels);
+    std::vector<cv::Mat> src1Channels(4);
+    std::vector<cv::Mat> src2Channels(4);
+    std::vector<cv::Mat> dstChannels(4);
+    cv::split(src1f, src1Channels);
+    cv::split(src2f, src2Channels);
 
-    // For each pixel, compute: result = src1 * (1 - src2Alpha) + src2 * src2Alpha
-    for (int i = 0; i < 3; i++) { // Process RGB channels
-        cv::Mat alpha;
-        cv::divide(src2Channels[3], cv::Scalar(255), alpha); // Normalize alpha to 0-1
+    // Apply opacity more aggressively to image B's alpha channel
+    // Emphasize the effect by using a non-linear curve for more noticeable changes
+    double opacityFactor = pow(_opacity / 100.0, 0.8); // Using power function to make changes more noticeable
+    src2Channels[3] = src2Channels[3] * opacityFactor;
 
+    // Process RGB channels with the adjusted opacity
+    for (int i = 0; i < 3; i++) {
+        // Get the adjusted alpha value
+        cv::Mat alpha = src2Channels[3].clone();
+
+        // Calculate inverse alpha
         cv::Mat inverseAlpha;
         cv::subtract(cv::Scalar(1.0), alpha, inverseAlpha);
 
+        // Blend according to alpha
         cv::Mat term1, term2;
         cv::multiply(src1Channels[i], inverseAlpha, term1);
         cv::multiply(src2Channels[i], alpha, term2);
 
-        cv::add(term1, term2, dstChannels[i]);
+        // Add the terms to get the blended result
+        cv::Mat resultChannel;
+        cv::add(term1, term2, resultChannel);
+        dstChannels[i] = resultChannel;
     }
 
-    // Keep the alpha channel of the bottom layer
-    dstChannels[3] = src1Channels[3].clone();
+    // Calculate resulting alpha channel
+    // For normal blend, the result alpha should be a combination of both alphas
+    cv::Mat alpha1 = src1Channels[3];
+    cv::Mat alpha2 = src2Channels[3];
+    cv::Mat inverseAlpha2;
+    cv::subtract(cv::Scalar(1.0), alpha2, inverseAlpha2);
 
-    // Merge the channels back
-    cv::merge(dstChannels, 4, dst);
+    // Alpha compositing formula: result_alpha = alpha2 + alpha1 * (1 - alpha2)
+    cv::Mat resultAlpha;
+    cv::multiply(alpha1, inverseAlpha2, resultAlpha);
+    cv::add(resultAlpha, alpha2, dstChannels[3]);
+
+    // Merge channels
+    cv::Mat dstf;
+    cv::merge(dstChannels, dstf);
+
+    // Convert back to 8-bit format
+    dstf.convertTo(dst, CV_8UC4, 255.0);
 }
-
-
 void Blend::blendMultiply(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
 {
     // Verify inputs
@@ -323,22 +345,29 @@ void Blend::blendMultiply(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst
         return;
     }
 
+    // Convert images to floating point for better precision
+    cv::Mat src1f, src2f;
+    src1.convertTo(src1f, CV_32FC4, 1.0/255.0);
+    src2.convertTo(src2f, CV_32FC4, 1.0/255.0);
 
     // Split the images into channels
-    cv::Mat src1Channels[4];
-    cv::Mat src2Channels[4];
-    cv::Mat dstChannels[4];
-    cv::split(src1, src1Channels);
-    cv::split(src2, src2Channels);
+    std::vector<cv::Mat> src1Channels(4);
+    std::vector<cv::Mat> src2Channels(4);
+    std::vector<cv::Mat> dstChannels(4);
+    cv::split(src1f, src1Channels);
+    cv::split(src2f, src2Channels);
 
-    // For each RGB channel, multiply the values and normalize
+    // Apply enhanced opacity for more noticeable effect
+    double opacityFactor = pow(_opacity / 100.0, 0.8);
+    src2Channels[3] = src2Channels[3] * opacityFactor;
+
+    // For each RGB channel, multiply the values
     for (int i = 0; i < 3; i++) {
         cv::Mat multiplied;
-        cv::multiply(src1Channels[i], src2Channels[i], multiplied, 1.0/255.0);
+        cv::multiply(src1Channels[i], src2Channels[i], multiplied);
 
         // Apply opacity via the alpha channel
-        cv::Mat alpha;
-        cv::divide(src2Channels[3], cv::Scalar(255), alpha); // Normalize alpha to 0-1
+        cv::Mat alpha = src2Channels[3].clone();
 
         cv::Mat inverseAlpha;
         cv::subtract(cv::Scalar(1.0), alpha, inverseAlpha);
@@ -350,12 +379,26 @@ void Blend::blendMultiply(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst
         cv::add(term1, term2, dstChannels[i]);
     }
 
-    // Keep the alpha channel of the bottom layer
-    dstChannels[3] = src1Channels[3].clone();
+    // Calculate resulting alpha channel
+    cv::Mat alpha1 = src1Channels[3];
+    cv::Mat alpha2 = src2Channels[3];
+    cv::Mat inverseAlpha2;
+    cv::subtract(cv::Scalar(1.0), alpha2, inverseAlpha2);
+
+    // Alpha compositing formula: result_alpha = alpha2 + alpha1 * (1 - alpha2)
+    cv::Mat resultAlpha;
+    cv::multiply(alpha1, inverseAlpha2, resultAlpha);
+    cv::add(resultAlpha, alpha2, dstChannels[3]);
 
     // Merge the channels back
-    cv::merge(dstChannels, 4, dst);
+    cv::Mat dstf;
+    cv::merge(dstChannels, dstf);
+
+    // Convert back to 8-bit
+    dstf.convertTo(dst, CV_8UC4, 255.0);
 }
+
+
 
 
 void Blend::blendScreen(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
@@ -368,25 +411,32 @@ void Blend::blendScreen(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
         return;
     }
 
+    // Convert images to floating point for better precision
+    cv::Mat src1f, src2f;
+    src1.convertTo(src1f, CV_32FC4, 1.0/255.0);
+    src2.convertTo(src2f, CV_32FC4, 1.0/255.0);
 
     // Split the images into channels
-    cv::Mat src1Channels[4];
-    cv::Mat src2Channels[4];
-    cv::Mat dstChannels[4];
-    cv::split(src1, src1Channels);
-    cv::split(src2, src2Channels);
+    std::vector<cv::Mat> src1Channels(4);
+    std::vector<cv::Mat> src2Channels(4);
+    std::vector<cv::Mat> dstChannels(4);
+    cv::split(src1f, src1Channels);
+    cv::split(src2f, src2Channels);
 
-    // For each RGB channel, compute: result = 1 - (1 - src1) * (1 - src2)
+    // Apply enhanced opacity for more noticeable effect
+    double opacityFactor = pow(_opacity / 100.0, 0.8);
+    src2Channels[3] = src2Channels[3] * opacityFactor;
+
+    // For each RGB channel, compute the screen blend: result = 1 - (1 - src1) * (1 - src2)
     for (int i = 0; i < 3; i++) {
         cv::Mat invSrc1, invSrc2, product, screen;
-        cv::subtract(cv::Scalar(255), src1Channels[i], invSrc1);
-        cv::subtract(cv::Scalar(255), src2Channels[i], invSrc2);
-        cv::multiply(invSrc1, invSrc2, product, 1.0/255.0);
-        cv::subtract(cv::Scalar(255), product, screen);
+        cv::subtract(cv::Scalar(1.0), src1Channels[i], invSrc1);
+        cv::subtract(cv::Scalar(1.0), src2Channels[i], invSrc2);
+        cv::multiply(invSrc1, invSrc2, product);
+        cv::subtract(cv::Scalar(1.0), product, screen);
 
         // Apply opacity via the alpha channel
-        cv::Mat alpha;
-        cv::divide(src2Channels[3], cv::Scalar(255), alpha); // Normalize alpha to 0-1
+        cv::Mat alpha = src2Channels[3].clone();
 
         cv::Mat inverseAlpha;
         cv::subtract(cv::Scalar(1.0), alpha, inverseAlpha);
@@ -398,13 +448,24 @@ void Blend::blendScreen(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
         cv::add(term1, term2, dstChannels[i]);
     }
 
-    // Keep the alpha channel of the bottom layer
-    dstChannels[3] = src1Channels[3].clone();
+    // Calculate resulting alpha channel
+    cv::Mat alpha1 = src1Channels[3];
+    cv::Mat alpha2 = src2Channels[3];
+    cv::Mat inverseAlpha2;
+    cv::subtract(cv::Scalar(1.0), alpha2, inverseAlpha2);
+
+    // Alpha compositing formula: result_alpha = alpha2 + alpha1 * (1 - alpha2)
+    cv::Mat resultAlpha;
+    cv::multiply(alpha1, inverseAlpha2, resultAlpha);
+    cv::add(resultAlpha, alpha2, dstChannels[3]);
 
     // Merge the channels back
-    cv::merge(dstChannels, 4, dst);
-}
+    cv::Mat dstf;
+    cv::merge(dstChannels, dstf);
 
+    // Convert back to 8-bit
+    dstf.convertTo(dst, CV_8UC4, 255.0);
+}
 void Blend::blendOverlay(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
 {
     // Verify inputs
@@ -415,63 +476,85 @@ void Blend::blendOverlay(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
         return;
     }
 
+    // Convert images to floating point for better precision
+    cv::Mat src1f, src2f;
+    src1.convertTo(src1f, CV_32FC4, 1.0/255.0);
+    src2.convertTo(src2f, CV_32FC4, 1.0/255.0);
 
     // Split the images into channels
-    cv::Mat src1Channels[4];
-    cv::Mat src2Channels[4];
-    cv::Mat dstChannels[4];
-    cv::split(src1, src1Channels);
-    cv::split(src2, src2Channels);
+    std::vector<cv::Mat> src1Channels(4);
+    std::vector<cv::Mat> src2Channels(4);
+    std::vector<cv::Mat> dstChannels(4);
+    cv::split(src1f, src1Channels);
+    cv::split(src2f, src2Channels);
 
-    // For each RGB channel
+    // Apply enhanced opacity for more noticeable effect
+    double opacityFactor = pow(_opacity / 100.0, 0.8);
+    src2Channels[3] = src2Channels[3] * opacityFactor;
+
+    // For each RGB channel, apply overlay blend
     for (int i = 0; i < 3; i++) {
-        cv::Mat overlay = cv::Mat::zeros(src1Channels[i].size(), CV_8UC1);
+        cv::Mat overlay = cv::Mat::zeros(src1Channels[i].size(), CV_32F);
+        cv::Mat base = src1Channels[i];
+        cv::Mat blend = src2Channels[i];
 
-        // Create mask for dark pixels (< 128)
+        // Create masks for dark pixels (< 0.5)
         cv::Mat darkMask;
-        cv::compare(src1Channels[i], 128, darkMask, cv::CMP_LT);
+        cv::compare(base, 0.5, darkMask, cv::CMP_LT);
+        darkMask.convertTo(darkMask, CV_32F, 1.0/255.0);
 
-        // Create mask for light pixels (>= 128)
+        // Create mask for light pixels (>= 0.5)
         cv::Mat lightMask;
-        cv::compare(src1Channels[i], 128, lightMask, cv::CMP_GE);
+        cv::compare(base, 0.5, lightMask, cv::CMP_GE);
+        lightMask.convertTo(lightMask, CV_32F, 1.0/255.0);
 
-        // For dark areas (base < 128): result = 2 * base * blend / 255
+        // For dark areas (base < 0.5): result = 2 * base * blend
         cv::Mat darkResult;
-        cv::multiply(src1Channels[i], src2Channels[i], darkResult, 2.0/255.0);
+        cv::multiply(base, blend, darkResult, 2.0);
 
-        // For light areas (base >= 128): result = 255 - 2 * (255 - base) * (255 - blend) / 255
-        cv::Mat invSrc1, invSrc2, product, lightResult;
-        cv::subtract(cv::Scalar(255), src1Channels[i], invSrc1);
-        cv::subtract(cv::Scalar(255), src2Channels[i], invSrc2);
-        cv::multiply(invSrc1, invSrc2, product, 2.0/255.0);
-        cv::subtract(cv::Scalar(255), product, lightResult);
+        // For light areas (base >= 0.5): result = 1 - 2 * (1 - base) * (1 - blend)
+        cv::Mat invBase, invBlend, product, lightResult;
+        cv::subtract(cv::Scalar(1.0), base, invBase);
+        cv::subtract(cv::Scalar(1.0), blend, invBlend);
+        cv::multiply(invBase, invBlend, product, 2.0);
+        cv::subtract(cv::Scalar(1.0), product, lightResult);
 
         // Combine results based on masks
-        cv::Mat blendedChannel;
-        darkResult.copyTo(overlay, darkMask);
-        lightResult.copyTo(overlay, lightMask);
+        cv::Mat term1, term2, blendedChannel;
+        cv::multiply(darkResult, darkMask, term1);
+        cv::multiply(lightResult, lightMask, term2);
+        cv::add(term1, term2, blendedChannel);
 
-        // Apply opacity via the alpha channel
-        cv::Mat alpha;
-        cv::divide(src2Channels[3], cv::Scalar(255), alpha); // Normalize alpha to 0-1
-
+        // Apply opacity
+        cv::Mat alpha = src2Channels[3].clone();
         cv::Mat inverseAlpha;
         cv::subtract(cv::Scalar(1.0), alpha, inverseAlpha);
 
-        cv::Mat term1, term2;
-        cv::multiply(src1Channels[i], inverseAlpha, term1);
-        cv::multiply(overlay, alpha, term2);
+        cv::Mat baseTerm, blendTerm;
+        cv::multiply(base, inverseAlpha, baseTerm);
+        cv::multiply(blendedChannel, alpha, blendTerm);
 
-        cv::add(term1, term2, dstChannels[i]);
+        cv::add(baseTerm, blendTerm, dstChannels[i]);
     }
 
-    // Keep the alpha channel of the bottom layer
-    dstChannels[3] = src1Channels[3].clone();
+    // Calculate resulting alpha channel
+    cv::Mat alpha1 = src1Channels[3];
+    cv::Mat alpha2 = src2Channels[3];
+    cv::Mat inverseAlpha2;
+    cv::subtract(cv::Scalar(1.0), alpha2, inverseAlpha2);
+
+    // Alpha compositing formula: result_alpha = alpha2 + alpha1 * (1 - alpha2)
+    cv::Mat resultAlpha;
+    cv::multiply(alpha1, inverseAlpha2, resultAlpha);
+    cv::add(resultAlpha, alpha2, dstChannels[3]);
 
     // Merge the channels back
-    cv::merge(dstChannels, 4, dst);
-}
+    cv::Mat dstf;
+    cv::merge(dstChannels, dstf);
 
+    // Convert back to 8-bit
+    dstf.convertTo(dst, CV_8UC4, 255.0);
+}
 void Blend::blendDifference(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& dst)
 {
     // Verify inputs
@@ -482,13 +565,21 @@ void Blend::blendDifference(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& d
         return;
     }
 
+    // Convert images to floating point for better precision
+    cv::Mat src1f, src2f;
+    src1.convertTo(src1f, CV_32FC4, 1.0/255.0);
+    src2.convertTo(src2f, CV_32FC4, 1.0/255.0);
 
     // Split the images into channels
-    cv::Mat src1Channels[4];
-    cv::Mat src2Channels[4];
-    cv::Mat dstChannels[4];
-    cv::split(src1, src1Channels);
-    cv::split(src2, src2Channels);
+    std::vector<cv::Mat> src1Channels(4);
+    std::vector<cv::Mat> src2Channels(4);
+    std::vector<cv::Mat> dstChannels(4);
+    cv::split(src1f, src1Channels);
+    cv::split(src2f, src2Channels);
+
+    // Apply enhanced opacity for more noticeable effect
+    double opacityFactor = pow(_opacity / 100.0, 0.8);
+    src2Channels[3] = src2Channels[3] * opacityFactor;
 
     // For each RGB channel, compute absolute difference
     for (int i = 0; i < 3; i++) {
@@ -496,8 +587,7 @@ void Blend::blendDifference(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& d
         cv::absdiff(src1Channels[i], src2Channels[i], difference);
 
         // Apply opacity via the alpha channel
-        cv::Mat alpha;
-        cv::divide(src2Channels[3], cv::Scalar(255), alpha); // Normalize alpha to 0-1
+        cv::Mat alpha = src2Channels[3].clone();
 
         cv::Mat inverseAlpha;
         cv::subtract(cv::Scalar(1.0), alpha, inverseAlpha);
@@ -509,11 +599,23 @@ void Blend::blendDifference(const cv::Mat& src1, const cv::Mat& src2, cv::Mat& d
         cv::add(term1, term2, dstChannels[i]);
     }
 
-    // Keep the alpha channel of the bottom layer
-    dstChannels[3] = src1Channels[3].clone();
+    // Calculate resulting alpha channel
+    cv::Mat alpha1 = src1Channels[3];
+    cv::Mat alpha2 = src2Channels[3];
+    cv::Mat inverseAlpha2;
+    cv::subtract(cv::Scalar(1.0), alpha2, inverseAlpha2);
+
+    // Alpha compositing formula: result_alpha = alpha2 + alpha1 * (1 - alpha2)
+    cv::Mat resultAlpha;
+    cv::multiply(alpha1, inverseAlpha2, resultAlpha);
+    cv::add(resultAlpha, alpha2, dstChannels[3]);
 
     // Merge the channels back
-    cv::merge(dstChannels, 4, dst);
+    cv::Mat dstf;
+    cv::merge(dstChannels, dstf);
+
+    // Convert back to 8-bit
+    dstf.convertTo(dst, CV_8UC4, 255.0);
 }
 
 
