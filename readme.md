@@ -1,9 +1,15 @@
 # Node-Based Image Processor
 
 A visual, modular image processing system built using **Qt**, **OpenCV**, and **QtNodes**. This project lets users create and connect processing nodes in a graph-based editor interface — inspired by tools like Unreal Engine Blueprints and Blender's Shader Node Editor.
+---
+![ImageProcessor Application](https://github.com/user-attachments/assets/4f8ae7cb-86ff-466a-a47f-211df9cbd9b9)
+1/3
+![ImageProcessor Application](https://github.com/user-attachments/assets/8d2ed6e6-b56d-4de7-a4b6-8363004ccaca)
+2/3
+![ImageProcessor Application](https://github.com/user-attachments/assets/e9ae7061-e072-4937-9150-760c32b1c36a)
+3/3
 
 ---
-
 ## 🛠️ Built With
 
 - **Qt 6.9 / Qt Creator** – GUI framework and IDE used for development.
