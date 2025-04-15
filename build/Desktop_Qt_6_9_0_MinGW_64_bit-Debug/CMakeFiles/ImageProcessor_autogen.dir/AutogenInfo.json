@@ -403,12 +403,6 @@
 			"MU",
 			"EWIEGA46WW/moc_edge.cpp",
 			null
-		],
-		[
-			"C:/Users/Himanshu Pancholi/ImageProcessor/mainwindow.h",
-			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
-			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -509,12 +503,7 @@
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Splitter.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/Threshold.cpp", "MU", null ],
 		[ "C:/Users/Himanshu Pancholi/ImageProcessor/edge.cpp", "MU", null ],
-		[ "C:/Users/Himanshu Pancholi/ImageProcessor/main.cpp", "MU", null ],
-		[
-			"C:/Users/Himanshu Pancholi/ImageProcessor/mainwindow.cpp",
-			"MU",
-			null
-		]
+		[ "C:/Users/Himanshu Pancholi/ImageProcessor/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

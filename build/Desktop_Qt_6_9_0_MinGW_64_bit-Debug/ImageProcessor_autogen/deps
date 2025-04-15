@@ -163,7 +163,6 @@ ImageProcessor_autogen/timestamp: \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qkeysequence.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qpaintdevice.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qpalette.h \
-	C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qpicture.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qpixelformat.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qpixmap.h \
@@ -171,10 +170,7 @@ ImageProcessor_autogen/timestamp: \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qregion.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qrgb.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qrgba64.h \
-	C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qtextdocument.h \
-	C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
-	C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qtgui-config.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qtguiexports.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qtguiglobal.h \
@@ -182,21 +178,13 @@ ImageProcessor_autogen/timestamp: \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.9.0/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QCheckBox \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QDockWidget \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLabel \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QMainWindow \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QTextEdit \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qcheckbox.h \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qdockwidget.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qsizepolicy.h \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtabwidget.h \
-	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtextedit.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
 	C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -796,8 +784,6 @@ ImageProcessor_autogen/timestamp: \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/edge.cpp \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/edge.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/main.cpp \
-	C:/Users/Himanshu\ Pancholi/ImageProcessor/mainwindow.cpp \
-	C:/Users/Himanshu\ Pancholi/ImageProcessor/mainwindow.h \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/NodeData \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/NodeDelegateModel \
 	C:/Users/Himanshu\ Pancholi/ImageProcessor/nodeeditor/include/QtNodes/NodeDelegateModelRegistry \

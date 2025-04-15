@@ -93,8 +93,8 @@ int main(int argc, char *argv[])
 
     QToolButton* Imageloader = new QToolButton();
     Imageloader->setText("Image Loader");
-    Imageloader->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    Imageloader->setIconSize(QSize(32, 32)); // Set your desired size
+    Imageloader->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/input.png"));
+    Imageloader->setIconSize(QSize(42, 42)); // Set your desired size
     Imageloader->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     Imageloader->setFixedSize(70, 70);
     leftLayout->addWidget(Imageloader);
@@ -113,8 +113,8 @@ int main(int argc, char *argv[])
     });
     QToolButton* imageshow = new QToolButton();
     imageshow->setText("Image Show");
-    imageshow->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    imageshow->setIconSize(QSize(32, 32)); // Set your desired size
+    imageshow->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/output.png"));
+    imageshow->setIconSize(QSize(42, 42)); // Set your desired size
     imageshow->setFixedSize(70, 70);
     imageshow->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     leftLayout->addWidget(imageshow);
@@ -155,8 +155,8 @@ int main(int argc, char *argv[])
 
     QToolButton* splitter = new QToolButton();
     splitter->setText("Splitter");
-    splitter->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    splitter->setIconSize(QSize(32, 32)); // Set your desired size
+    splitter->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/splitter.png"));
+    splitter->setIconSize(QSize(42, 42)); // Set your desired size
     splitter->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     splitter->setFixedSize(70, 70);
     leftLayout->addWidget(splitter);
@@ -176,8 +176,8 @@ int main(int argc, char *argv[])
 
     QToolButton* blur = new QToolButton();
     blur->setText("Blur");
-    blur->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    blur->setIconSize(QSize(32, 32)); // Set your desired size
+    blur->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/blur.png"));
+    blur->setIconSize(QSize(42, 42)); // Set your desired size
     blur->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     blur->setFixedSize(70, 70);
     leftLayout->addWidget(blur);
@@ -197,8 +197,8 @@ int main(int argc, char *argv[])
 
     QToolButton* threshold = new QToolButton();
     threshold->setText("Threshold");
-    threshold->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    threshold->setIconSize(QSize(32, 32)); // Set your desired size
+    threshold->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/threshold.png"));
+    threshold->setIconSize(QSize(42, 42)); // Set your desired size
     threshold->setFixedSize(70, 70);
     threshold->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     leftLayout->addWidget(threshold);
@@ -218,8 +218,8 @@ int main(int argc, char *argv[])
 
     QToolButton* edge = new QToolButton();
     edge->setText("Edge Detection");
-    edge->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    edge->setIconSize(QSize(32, 32)); // Set your desired size
+    edge->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/edge.png"));
+    edge->setIconSize(QSize(42, 42)); // Set your desired size
     edge->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     edge->setFixedSize(70, 70);
     leftLayout->addWidget(edge);
@@ -239,8 +239,8 @@ int main(int argc, char *argv[])
 
     QToolButton* blend = new QToolButton();
     blend->setText("Blend Mode");
-    blend->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    blend->setIconSize(QSize(32, 32)); // Set your desired size
+    blend->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/blend.png"));
+    blend->setIconSize(QSize(42, 42)); // Set your desired size
     blend->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     blend->setFixedSize(70, 70);
     leftLayout->addWidget(blend);
@@ -260,8 +260,8 @@ int main(int argc, char *argv[])
 
     QToolButton* noise = new QToolButton();
     noise->setText("Noise");
-   noise->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    noise->setIconSize(QSize(32, 32)); // Set your desired size
+   noise->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/noise.png"));
+    noise->setIconSize(QSize(42, 42)); // Set your desired size
     noise->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     noise->setFixedSize(70, 70);
     leftLayout->addWidget(noise);
@@ -281,8 +281,8 @@ int main(int argc, char *argv[])
 
     QToolButton* filter_n = new QToolButton();
     filter_n->setText("Filter");
-    filter_n->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/brightness.png"));
-    filter_n->setIconSize(QSize(32, 32)); // Set your desired size
+    filter_n->setIcon(QIcon("C:/Users/Himanshu Pancholi/ImageProcessor/icons/filter.png"));
+    filter_n->setIconSize(QSize(42, 42)); // Set your desired size
     filter_n->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);  // Icon above label
     filter_n->setFixedSize(70, 70);
     leftLayout->addWidget(filter_n);

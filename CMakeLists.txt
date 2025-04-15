@@ -17,8 +17,7 @@ find_package(OpenCV REQUIRED)
 add_subdirectory(nodeeditor)
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
+
 )
 
 set(HPP_HEADER_FILES
@@ -50,6 +49,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Noise.h
         Filter.h
         Filter.cpp
+        readme.md
     )
 else()
     if(ANDROID)

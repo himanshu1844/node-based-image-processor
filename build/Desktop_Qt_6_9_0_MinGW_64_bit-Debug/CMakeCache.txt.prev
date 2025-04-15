@@ -318,6 +318,9 @@ ImageProcessor_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 ImageProcessor_SOURCE_DIR:STATIC=C:/Users/Himanshu Pancholi/ImageProcessor
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=C:/Users/Himanshu Pancholi/ImageProcessor/opencv/build
+
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
 QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
@@ -354,6 +357,9 @@ Qt6Core_DIR:PATH=C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6Core
 
 //The directory containing a CMake configuration file for Qt6EntryPointPrivate.
 Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6EntryPointPrivate
+
+//The directory containing a CMake configuration file for Qt6Graphs.
+Qt6Graphs_DIR:PATH=Qt6Graphs_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for Qt6GuiPrivate.
 Qt6GuiPrivate_DIR:PATH=C:/Qt/6.9.0/mingw_64/lib/cmake/Qt6GuiPrivate
@@ -590,6 +596,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_TAPI-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[C:/Users/Himanshu Pancholi/Downloads/OpenCV-MinGW-Build-OpenCV-4.5.5-x64/OpenCV-MinGW-Build-OpenCV-4.5.5-x64][v4.5.5()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding WrapAtomic
